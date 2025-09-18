@@ -35,3 +35,26 @@
 .title-32 {
     font-size: fluid(32px, 20px);
 }
+
+.custom-input {
+    padding: 16px 28px;
+    background: var(--white);
+    border-radius: 8px;
+    stroke: none;
+    border: none;
+    outline: none;
+    color: var(--neutral);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    transition: background var(--trans);
+    color: #000;
+
+    &:hover {
+        background: #FBFCFE;
+    }
+}
+
+.p-top {
+    padding-top: var(--header-height);
+}

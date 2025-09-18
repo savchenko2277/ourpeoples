@@ -105,9 +105,11 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style>
+ .svg-calendar-dims { width: 20px; height: 20px; }
  .svg-location-dims { width: 20px; height: 20px; }
  .svg-mail-dims { width: 20px; height: 20px; }
  .svg-phone-dims { width: 20px; height: 20px; }
+ .svg-time-dims { width: 20px; height: 20px; }
 </style>
 
 <!--
@@ -129,9 +131,11 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
+     <symbol viewBox="0 0 20 20" id="calendar" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="18" height="16" rx="3" stroke-width="2"/><path d="M5 1v3M15 1v3" stroke-width="2" stroke-linecap="round"/><path d="M4 7h12M4 11h12M4 15h12M5 8v8M10 8v8M15 8v8" stroke-width="2"/></symbol>
      <symbol viewBox="0 0 20 20" id="location" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="9" r="2.25" stroke-width="1.5"/><path d="M10 1.75a7.25 7.25 0 0 1 5.014 12.487l-4.842 4.57a.25.25 0 0 1-.344 0l-4.842-4.57A7.25 7.25 0 0 1 10 1.75Z" stroke-width="1.5"/></symbol>
      <symbol viewBox="0 0 20 20" id="mail" xmlns="http://www.w3.org/2000/svg"><rect x="1.75" y="3.75" width="16.5" height="12.5" rx="1.25" stroke-width="1.5"/><path d="m2 8 7.106 3.553a2 2 0 0 0 1.788 0L18 8" stroke-width="1.5"/></symbol>
      <symbol viewBox="0 0 20 20" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M2.29 2.888c0 3.106 1.535 7.191 4.643 10.299 3.107 3.107 7.074 4.525 10.18 4.524.945 0 1.65-.78 1.783-1.715v-2.55a.572.572 0 0 0-.488-.643c-1.295-.253-2.505-.713-4.167-1.475a.568.568 0 0 0-.722.218l-.857 1.407a15.586 15.586 0 0 1-3.135-2.434 16.091 16.091 0 0 1-2.479-3.18l1.407-.857a.568.568 0 0 0 .218-.722c-.762-1.662-1.221-2.872-1.475-4.167a.572.572 0 0 0-.643-.488h-2.55c-.935.133-1.714.839-1.715 1.783Z" stroke-width="1.5"/></symbol>
+     <symbol viewBox="0 0 20 20" id="time" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke-width="2"/><path d="M10 4v6h4" stroke-width="2" stroke-linecap="round"/></symbol>
 </svg>
 
 <!--
@@ -158,6 +162,14 @@ embedded above. They may be styled via CSS.
             <h3>A) Inline SVG with embedded sprite</h3>
             <ul>
 
+             <li title="calendar">
+                    <div class="icon-box">
+                        <svg class="svg-calendar-dims">
+                            <use xlink:href="#calendar"></use>
+                        </svg>
+                    </div>
+                    <h2>calendar, </h2>
+                </li>
              <li title="location">
                     <div class="icon-box">
                         <svg class="svg-location-dims">
@@ -182,6 +194,14 @@ embedded above. They may be styled via CSS.
                     </div>
                     <h2>phone, </h2>
                 </li>
+             <li title="time">
+                    <div class="icon-box">
+                        <svg class="svg-time-dims">
+                            <use xlink:href="#time"></use>
+                        </svg>
+                    </div>
+                    <h2>time, </h2>
+                </li>
          </ul>
 
 <!--
@@ -201,6 +221,14 @@ SVG sprite. They may be styled via CSS.
             <h3>B) Inline SVG with external sprite</h3>
             <ul>
 
+             <li title="calendar">
+                    <div class="icon-box">
+                        <svg class="svg-calendar-dims">
+                            <use xlink:href="_sprite.svg#calendar"></use>
+                        </svg>
+                    </div>
+                    <h2>calendar</h2>
+                </li>
              <li title="location">
                     <div class="icon-box">
                         <svg class="svg-location-dims">
@@ -224,6 +252,14 @@ SVG sprite. They may be styled via CSS.
                         </svg>
                     </div>
                     <h2>phone</h2>
+                </li>
+             <li title="time">
+                    <div class="icon-box">
+                        <svg class="svg-time-dims">
+                            <use xlink:href="_sprite.svg#time"></use>
+                        </svg>
+                    </div>
+                    <h2>time</h2>
                 </li>
          </ul>
 

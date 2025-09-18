@@ -1,0 +1,205 @@
+@use 'lib' as *;
+
+.info-block {
+    $self: &;
+
+    padding: 44px 0px;
+    background-image: url('./img/info-block-bg.webp');
+    background-size: cover;
+    color: var(--white);
+
+    @include media("<=lg") {
+        padding: 0px;
+    }
+
+    &__container.container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 32px;
+
+        @include media("<=lg") {
+            grid-template-columns: 100%;
+            width: 100%;
+            margin: 0;
+            gap: 0;
+        }
+    }
+
+    &__content.container {
+        grid-column: span 4;
+
+        @include media("<=lg") {
+            grid-column: span 1;
+            padding: 40px 0px;
+        }
+
+        @include media(">lg") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 42px;
+
+        @include media("<=lg") {
+            text-align: center;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+
+        @include media("<=xs") {
+            grid-template-columns: 100%;
+            gap: 16px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include media("<=xs") {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+
+    &__item-image {
+        height: 64px;
+        width: 64px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__item-title {
+        font-size: 20px;
+        font-weight: 700;
+        max-width: 165px;
+
+        @include media("<=xlg") {
+            font-size: 18px;
+            max-width: 100%;
+        }
+
+        @include media("<=lg") {
+            font-size: 16px;
+        }
+    }
+
+    &__item-text {
+        color: var(--light-blue);
+        font-size: 14px;
+        line-height: 20px;
+
+        @include media("<=xxlg") {
+            font-size: 12px;
+        }
+
+        @include media("<=xs") {
+            display: none;
+        }
+    }
+
+    &__side {
+        grid-column: span 2;
+        padding: 48px 48px 32px 48px;
+        background: rgba($color: #529EF8, $alpha: 0.5);
+        border-radius: 32px 80px 0px 32px;
+
+        @include media("<=lg") {
+            grid-column: span 1;
+            padding: 28px 0px;
+            border-radius: 0px;
+        }
+
+        @include media(">lg") {
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__form.container {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin-bottom: 16px;
+        }
+
+        @include media(">lg") {
+            width: 100%;
+            margin: 0;
+        }
+
+        @include media("<=lg") {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px 16px;
+
+            input {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media("<=sm") {
+            grid-template-columns: repeat(2, 1fr);
+
+            input {
+                grid-column: span 2;
+            }
+        }
+        
+    }
+
+    &__form-btn {
+        padding: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        box-shadow: 0px 8px 16px 0px #00B3CB4D;
+        line-height: 20px;
+        min-height: 56px;
+        border-radius: 28px;
+        margin-bottom: 24px;
+
+        @include media("<=lg") {
+            margin-bottom: 0;
+        }
+
+        @include media("<=sm") {
+            grid-column: span 2;
+        }
+
+        @include media("<=xs") {
+            margin-top: 8px;
+        }
+    }
+
+    &__form-text {
+        font-size: 11px;
+        line-height: 16px;
+
+        a {
+            color: var(--green);
+        }
+
+        @include media("<=lg") {
+            grid-column: span 3;
+        }
+
+        @include media("<=sm") {
+            grid-column: span 2;
+            text-align: center;
+        }
+    }
+
+}

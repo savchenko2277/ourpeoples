@@ -1,0 +1,31 @@
+@use 'lib' as *;
+
+.promo {
+	$self: &;
+
+    @include media("<=xs") {
+        border-bottom: 1px solid #EAE9F3;
+    }
+
+	&__container {
+        min-height: 520px;
+        background: var(--blue);
+
+        @include media("<=xxxlg") {
+            min-height: 440px;
+        }
+
+        @include media("<=lg") {
+            min-height: 340px;
+        }
+
+        @include media("<=sm") {
+            min-height: 255px;
+        }
+	}
+
+	&__swiper {
+
+	}
+
+}

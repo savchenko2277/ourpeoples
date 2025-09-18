@@ -92,7 +92,6 @@
     &__top-container {
         display: grid;
         grid-template-columns: minmax(auto, 25%) auto max-content max-content;
-        gap: 32px;
         padding: 12px 0px;
 
         @include media("<=xxxlg") {
@@ -183,9 +182,11 @@
         flex-direction: row;
         align-items: center;
         gap: 12px;
+        margin-left: 32px;
 
         @include media("<=lg") {
             padding-left: 28px;
+            margin-left: 0;
         }
     }
 
@@ -209,11 +210,14 @@
         display: grid;
         grid-template-columns: minmax(auto, 25%) auto max-content;
         align-items: center;
-        gap: 32px;
         position: relative;
 
         @include media("<=xxxlg") {
             grid-template-columns: minmax(auto, 20%) auto max-content;
+        }
+
+        @include media("<=xlg") {
+            gap: 32px;
         }
 
         @include media("<=lg") {

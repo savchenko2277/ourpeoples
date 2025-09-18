@@ -1,0 +1,24 @@
+<div class="offers-card @@cardClass">
+    <div class="offers-card__top">
+        @@include("_top-info.html", {
+        "cardDate": "<span>ВТ,</span>23 сентября",
+        "cardTime": "14:00",
+        "cardValue": "- 15%"
+        })
+    </div>
+    <h5 class="offers-card__title">@@cardTitle</h5>
+    <div class="offers-card__info">
+        <img loading="lazy" alt="image" src="./img/offers-card/@@cardImg.webp" class="offers-card__img">
+        <div class="offers-card__info-text">
+            <p class="offers-card__name">@@cardName</p>
+            <p class="offers-card__desc">@@cardDesc</p>
+        </div>
+    </div>
+    <div class="offers-card__bottom">
+        <div class="offers-card__price">
+            <b>4 800 ₽</b>
+            @@cardPrice
+        </div>
+        <button type="button" aria-label="ЗАПИСАТЬСЯ НА ПРИЕМ" class="offers-card__btn btn btn-green">ЗАПИСАТЬСЯ НА ПРИЕМ</button>
+    </div>
+</div>

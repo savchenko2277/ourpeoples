@@ -1,0 +1,66 @@
+@use 'lib' as *;
+
+.advantages {
+	$self: &;
+
+    padding: 46px 0px;
+
+    @include media("<=xxxlg") {
+        padding: 36px 0px;
+    }
+
+    @include media("<=lg") {
+        padding: 32px 0px;
+    }
+
+    @include media("<=xs") {
+        display: none;
+    }
+
+	&__container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+	}
+
+	&__item {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        padding-right: 30px;
+
+        @include media("<=lg") {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+        }
+	}
+
+	&__item-icon {
+        width: 92px; height: 92px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex: 0 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @include media("<=lg") {
+            width: 68px; height: 68px;
+        }
+	}
+
+	&__item-text {
+        font-size: 16px;
+        font-weight: 700;
+	}
+
+}

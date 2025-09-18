@@ -1,0 +1,132 @@
+@use 'lib' as *;
+
+.offers-card {
+	$self: &;
+
+    background: var(--white);
+    border-radius: 32px;
+    box-shadow: 0px 4px 20px 0px #595A7024;
+
+	&__top {
+        padding: 28px;
+
+        @include media("<=lg") {
+            padding: 20px 20px 16px 20px;
+        }
+	}
+
+	&__title {
+        padding: 24px 28px 48px 28px;
+        font-size: fluid(24px, 18px);
+        font-weight: 700;
+
+        @include media("<=lg") {
+            padding: 24px 20px 32px 20px;
+        }
+
+        @include media("<=xs") {
+            padding: 16px 20px 24px 20px;
+        }
+	}
+
+	&__info {
+        padding: 12px 28px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        background: #F6F7FB;
+
+        @include media("<=lg") {
+            padding: 16px 20px;
+        }
+	}
+
+    &__info-text {
+        display: flex;
+        flex-direction: column;
+        gap: fluid(12px, 8px);
+    }
+
+	&__img {
+        width: 80px; height: 80px;
+        border-radius: 100%;
+        object-fit: cover;
+        grid-row: span 3;
+        grid-column: span 1;
+
+        @include media("<=lg") {
+            width: 72px; height: 72px;
+        }
+	}
+
+	&__name {
+        height: fit-content;
+        font-size: fluid(18px, 14px);
+        font-weight: 700;
+	}
+
+	&__desc {
+        font-size: fluid(14px, 12px);
+	}
+
+	&__bottom {
+        padding: 20px 28px 24px 28px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+
+        @include media("<=lg") {
+            padding: 12px 20px 20px 20px;
+        }
+	}
+
+	&__price {
+        display: flex;
+        flex-direction: column;
+        font-size: fluid(28px, 20px);
+        font-weight: 700;
+
+        b {
+            font-size: fluid(18px, 14px);
+            font-weight: 700;
+            width: fit-content;
+            color: #9493A9;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: var(--red);
+                position: absolute;
+                left: 0; top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @include media("<=lg") {
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+
+            b {
+                order: 1;
+            }
+        }
+	}
+
+	&__btn {
+        max-width: 225px;
+        padding: 15px 28px;
+
+        @include media("<=lg") {
+            max-width: 100%;
+            width: 100%;
+        }
+	}
+
+}

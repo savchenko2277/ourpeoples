@@ -61,4 +61,12 @@
         }
     })
 
+    const setHeaderHeight = () => {
+        const headerHeight = header.querySelector('.header__container').getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+    }
+
+    setHeaderHeight();
+    window.addEventListener('resize', setHeaderHeight);
+
 })();

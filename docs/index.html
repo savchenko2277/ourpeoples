@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1758182307923">
+    <link rel="stylesheet" href="style.css?v=1758222228317">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=d41a53f1-28a6-4072-b94a-46f4fbb1874c&lang=en_US"></script>
+    <script>
+        initMap();
+
+        async function initMap() {
+            await ymaps3.ready;
+
+            const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+            const map = new YMap(
+                document.getElementById('map'),
+                {
+                    location: {
+                        center: [37.588144, 55.733842],
+                        zoom: 10
+                    }
+                }
+            );
+
+            map.addChild(new YMapDefaultSchemeLayer());
+        }
+    </script>
     <title></title>
 </head>
-<body id="home">
+
+<body id="home" >
 <header data-header-js class="header">
     <div class="header__container">
         <div class="header__top">
@@ -124,6 +148,273 @@
     </div>
 </header>
 
+<section class="promo p-top">
+    <div class="promo__container">
+        <!-- <div class="promo__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide promo-item">
+                    <div class="promo-item__bg">
+                        <img loading="lazy" alt="image" src="./img/promo/1.webp">
+                    </div>
+                    <div class="promo-item__container container">
+                        
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>
+<section class="advantages">
+    <div class="advantages__container container">
+        <div class="advantages__item">
+            <div class="advantages__item-icon">
+                <img loading="lazy" alt="image" src="./img/advantages/1.webp">
+            </div>
+            <p class="advantages__item-text">
+                Непревзойденное качество
+                и&#160;забота о&#160;пациенте
+            </p>
+        </div>
+        <div class="advantages__item">
+            <div class="advantages__item-icon">
+                <img loading="lazy" alt="image" src="./img/advantages/2.webp">
+            </div>
+            <p class="advantages__item-text">
+                Прозрачная ценовая <br>
+                политика
+            </p>
+        </div>
+        <div class="advantages__item">
+            <div class="advantages__item-icon">
+                <img loading="lazy" alt="image" src="./img/advantages/3.webp">
+            </div>
+            <p class="advantages__item-text">
+                Специалисты высокого <br>
+                класса
+            </p>
+        </div>
+        <div class="advantages__item">
+            <div class="advantages__item-icon">
+                <img loading="lazy" alt="image" src="./img/advantages/4.webp">
+            </div>
+            <p class="advantages__item-text">
+                Здоровье пациента&#160;&#8212; <br>
+                наш приоритет
+            </p>
+        </div>
+    </div>
+</section>
+<section data-offers-js class="offers">
+    <div class="offers__container container">
+        <h2 class="offers__title title title-32">Выгодные предложения</h2>
+        <div class="offers__swiper swiper">
+            <div class="swiper-wrapper">
+                <div class="offers-card swiper-slide">
+    <div class="offers-card__top">
+        <div class="top-info">
+    <div class="top-info__info">
+        <div class="top-info__column">
+            <svg><use xlink:href="#calendar"></use></svg>
+            <span>ВТ,</span>23&#160;сентября
+        </div>
+        <div class="top-info__column">
+            <svg><use xlink:href="#time"></use></svg>
+            14:00
+        </div>
+    </div>
+    <div class="top-info__promo">
+       &#160;&#8212; 15%
+    </div>
+</div>
+    </div>
+    <h5 class="offers-card__title">Лечение кариеса с&#160;4 лет</h5>
+    <div class="offers-card__info">
+        <img loading="lazy" alt="image" src="./img/offers-card/1.webp" class="offers-card__img">
+        <div class="offers-card__info-text">
+            <p class="offers-card__name">Маркова Полина Владимировна</p>
+            <p class="offers-card__desc">Врач стоматолог общей практики</p>
+        </div>
+    </div>
+    <div class="offers-card__bottom">
+        <div class="offers-card__price">
+            <b>4 800 ₽</b>
+            4 150 ₽
+        </div>
+        <button type="button" aria-label="ЗАПИСАТЬСЯ НА ПРИЕМ" class="offers-card__btn btn btn-green">ЗАПИСАТЬСЯ НА&#160;ПРИЕМ</button>
+    </div>
+</div>
+                <div class="offers-card swiper-slide">
+    <div class="offers-card__top">
+        <div class="top-info">
+    <div class="top-info__info">
+        <div class="top-info__column">
+            <svg><use xlink:href="#calendar"></use></svg>
+            <span>ВТ,</span>23&#160;сентября
+        </div>
+        <div class="top-info__column">
+            <svg><use xlink:href="#time"></use></svg>
+            14:00
+        </div>
+    </div>
+    <div class="top-info__promo">
+       &#160;&#8212; 15%
+    </div>
+</div>
+    </div>
+    <h5 class="offers-card__title">Лечение кариеса с&#160;4 лет</h5>
+    <div class="offers-card__info">
+        <img loading="lazy" alt="image" src="./img/offers-card/1.webp" class="offers-card__img">
+        <div class="offers-card__info-text">
+            <p class="offers-card__name">Маркова Полина Владимировна</p>
+            <p class="offers-card__desc">Врач стоматолог общей практики</p>
+        </div>
+    </div>
+    <div class="offers-card__bottom">
+        <div class="offers-card__price">
+            <b>4 800 ₽</b>
+            4 150 ₽
+        </div>
+        <button type="button" aria-label="ЗАПИСАТЬСЯ НА ПРИЕМ" class="offers-card__btn btn btn-green">ЗАПИСАТЬСЯ НА&#160;ПРИЕМ</button>
+    </div>
+</div>
+                <div class="offers-card swiper-slide">
+    <div class="offers-card__top">
+        <div class="top-info">
+    <div class="top-info__info">
+        <div class="top-info__column">
+            <svg><use xlink:href="#calendar"></use></svg>
+            <span>ВТ,</span>23&#160;сентября
+        </div>
+        <div class="top-info__column">
+            <svg><use xlink:href="#time"></use></svg>
+            14:00
+        </div>
+    </div>
+    <div class="top-info__promo">
+       &#160;&#8212; 15%
+    </div>
+</div>
+    </div>
+    <h5 class="offers-card__title">Лечение кариеса с&#160;4 лет</h5>
+    <div class="offers-card__info">
+        <img loading="lazy" alt="image" src="./img/offers-card/1.webp" class="offers-card__img">
+        <div class="offers-card__info-text">
+            <p class="offers-card__name">Маркова Полина Владимировна</p>
+            <p class="offers-card__desc">Врач стоматолог общей практики</p>
+        </div>
+    </div>
+    <div class="offers-card__bottom">
+        <div class="offers-card__price">
+            <b>4 800 ₽</b>
+            4 150 ₽
+        </div>
+        <button type="button" aria-label="ЗАПИСАТЬСЯ НА ПРИЕМ" class="offers-card__btn btn btn-green">ЗАПИСАТЬСЯ НА&#160;ПРИЕМ</button>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="services">
+    <div class="services__container container">
+        <h2 class="services__title title title-32">Платные стоматологические услуги в&#160;Челябинске для взрослых и&#160;детей
+        </h2>
+        <div class="services__content">
+            <div class="services__side">
+                <div class="services__items">
+                    <a href="#" class="services__item">
+                        <img loading="lazy" alt="image" src="./img/services/icon-1.svg" class="services__item-icon">
+                        <p class="services__item-text">Имплантация</p>
+                    </a>
+                    <a href="#" class="services__item">
+                        <img loading="lazy" alt="image" src="./img/services/icon-2.svg" class="services__item-icon">
+                        <p class="services__item-text">Протезирование</p>
+                    </a>
+                    <a href="#" class="services__item">
+                        <img loading="lazy" alt="image" src="./img/services/icon-3.svg" class="services__item-icon">
+                        <p class="services__item-text">Лечение</p>
+                    </a>
+                    <a href="#" class="services__item">
+                        <img loading="lazy" alt="image" src="./img/services/icon-4.svg" class="services__item-icon">
+                        <p class="services__item-text">Удаление</p>
+                    </a>
+                    <a href="#" class="services__item">
+                        <img loading="lazy" alt="image" src="./img/services/icon-5.svg" class="services__item-icon">
+                        <p class="services__item-text">Детский прием</p>
+                    </a>
+                    <a href="#" class="services__item">
+                        <img loading="lazy" alt="image" src="./img/services/icon-6.svg" class="services__item-icon">
+                        <p class="services__item-text">Гигиена полости рта</p>
+                    </a>
+                </div>
+                <a href="#" class="services__link">ВСЕ УСЛУГИ</a>
+            </div>
+            <div class="services__quote">
+                <p class="services__quote-text">
+                    <em>Стоматология &#171;Свои люди&#187;&#160;&#8212; клиника, где работают настоящие врачи! Наша концепция&#160;&#8212; безопасность,
+                        технологичность, комфорт! Мы&#160;работаем для людей, которые ценят своё здоровье, время и&#160;деньги и
+                        предлагаем качественное и&#160;безопасное лечение по&#160;разумным ценам!</em>
+                </p>
+                <div class="services__author">
+                    <div class="services__author-image">
+                        <img loading="lazy" alt="image" src="./img/services/author.webp" class="">
+                    </div>
+                    <img loading="lazy" alt="image" src="./img/services/podpis.webp" class="services__author-podpis">
+                    <div class="services__author-info">
+                        <h5 class="services__author-name">Евгения Антонинкова</h5>
+                        <p class="services__author-desc">
+                            Основатель стоматологии &#171;Свои люди&#187;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="info-block">
+    <div class="info-block__container container">
+        <div class="info-block__content container">
+            <h2 class="info-block__title title title-32">Мы&#160;подберем удобное для вас время&#160;&#8212; в&#160;день обращения</h2>
+            <div class="info-block__items">
+                <div class="info-block__item">
+                    <img loading="lazy" src="./img/info-block/1.svg" alt="" class="info-block__item-image">
+                    <h5 class="info-block__item-title">Фиксированная цена</h5>
+                    <p class="info-block__item-text">
+                        Стоимость услуг прописывается
+                        в&#160;договоре и&#160;не&#160;меняется в&#160;процессе
+                        лечения
+                    </p>
+                </div>
+                <div class="info-block__item">
+                    <img loading="lazy" src="./img/info-block/2.svg" alt="" class="info-block__item-image">
+                    <h5 class="info-block__item-title">Оптимальный план лечения</h5>
+                    <p class="info-block__item-text">
+                        Наши специалисты составят оптимальный план лечения, учитывая все ваши индивидуальные особенности
+                    </p>
+                </div>
+                <div class="info-block__item">
+                    <img loading="lazy" src="./img/info-block/3.svg" alt="" class="info-block__item-image">
+                    <h5 class="info-block__item-title">Знакомство с&#160;клиникой</h5>
+                    <p class="info-block__item-text">
+                        В&#160;момент посещения вы&#160;увидите заботливое отношение нашей команды и&#160;познакомитесь с&#160;доктором
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="info-block__side">
+            <form action="" class="info-block__form container">
+                <input type="text" class="custom-input" placeholder="Ваше имя">
+                <input type="tel" class="custom-input" placeholder="Ваш контактный телефон">
+                <button type="button" aria-label="Отправить" class="info-block__form-btn btn btn-green">ЗАПИСАТЬСЯ НА&#160;ПРИЕМ</button>
+                <p class="info-block__form-text">
+                    Нажимая на&#160;кнопку &#171;Записаться на&#160;прием&#187;, вы&#160;даете согласие
+                    на&#160;обработку персональных данных и&#160;соглашаетесь
+                    c&#160;<a href="#">политикой конфиденциальности.</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
 <section data-team-js class="team">
     <div class="team__container container">
         <div class="team__up">
@@ -277,8 +568,8 @@
 </section>
 <section class="location">
     <div class="location__container">
-        <div class="map">
-            <img loading="lazy" alt="image" src="./img/map.webp">
+        <div data-map-js class="map">
+            <div id="map" class="map__iframe"></div>
         </div>
         <div class="location__content">
             <div class="location__content-container container">
@@ -404,8 +695,8 @@
     </div>
 </footer>
 
-<svg class="sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 20 20" id="location" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="9" r="2.25" stroke-width="1.5"/><path d="M10 1.75a7.25 7.25 0 0 1 5.014 12.487l-4.842 4.57a.25.25 0 0 1-.344 0l-4.842-4.57A7.25 7.25 0 0 1 10 1.75Z" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="mail" xmlns="http://www.w3.org/2000/svg"><rect x="1.75" y="3.75" width="16.5" height="12.5" rx="1.25" stroke-width="1.5"/><path d="m2 8 7.106 3.553a2 2 0 0 0 1.788 0L18 8" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M2.29 2.888c0 3.106 1.535 7.191 4.643 10.299 3.107 3.107 7.074 4.525 10.18 4.524.945 0 1.65-.78 1.783-1.715v-2.55a.572.572 0 0 0-.488-.643c-1.295-.253-2.505-.713-4.167-1.475a.568.568 0 0 0-.722.218l-.857 1.407a15.586 15.586 0 0 1-3.135-2.434 16.091 16.091 0 0 1-2.479-3.18l1.407-.857a.568.568 0 0 0 .218-.722c-.762-1.662-1.221-2.872-1.475-4.167a.572.572 0 0 0-.643-.488h-2.55c-.935.133-1.714.839-1.715 1.783Z" stroke-width="1.5"/></symbol></svg>
-<script src="common.js?v=1758182307923"></script>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 20 20" id="calendar" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="18" height="16" rx="3" stroke-width="2"/><path d="M5 1v3M15 1v3" stroke-width="2" stroke-linecap="round"/><path d="M4 7h12M4 11h12M4 15h12M5 8v8M10 8v8M15 8v8" stroke-width="2"/></symbol><symbol viewBox="0 0 20 20" id="location" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="9" r="2.25" stroke-width="1.5"/><path d="M10 1.75a7.25 7.25 0 0 1 5.014 12.487l-4.842 4.57a.25.25 0 0 1-.344 0l-4.842-4.57A7.25 7.25 0 0 1 10 1.75Z" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="mail" xmlns="http://www.w3.org/2000/svg"><rect x="1.75" y="3.75" width="16.5" height="12.5" rx="1.25" stroke-width="1.5"/><path d="m2 8 7.106 3.553a2 2 0 0 0 1.788 0L18 8" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M2.29 2.888c0 3.106 1.535 7.191 4.643 10.299 3.107 3.107 7.074 4.525 10.18 4.524.945 0 1.65-.78 1.783-1.715v-2.55a.572.572 0 0 0-.488-.643c-1.295-.253-2.505-.713-4.167-1.475a.568.568 0 0 0-.722.218l-.857 1.407a15.586 15.586 0 0 1-3.135-2.434 16.091 16.091 0 0 1-2.479-3.18l1.407-.857a.568.568 0 0 0 .218-.722c-.762-1.662-1.221-2.872-1.475-4.167a.572.572 0 0 0-.643-.488h-2.55c-.935.133-1.714.839-1.715 1.783Z" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="time" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke-width="2"/><path d="M10 4v6h4" stroke-width="2" stroke-linecap="round"/></symbol></svg>
+<script src="common.js?v=1758222228317"></script>
 </body>
 
 </html>
