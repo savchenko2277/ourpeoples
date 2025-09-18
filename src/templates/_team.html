@@ -1,0 +1,50 @@
+<section data-team-js class="team">
+    <div class="team__container container">
+        <div class="team__up">
+            <h2 class="team__title title title-32">Наша дружная профессиональная команда</h2>
+            <p class="team__desc">
+                Все наши врачи — высококвалифицированные специалисты, которые имеют большой опыт в стоматологии
+            </p>
+        </div>
+        <div class="team__swiper swiper">
+            <div class="swiper-wrapper">
+                @@include("_team-card.html", {
+                    "cardClass": "swiper-slide",
+                    "cardImg": "1",
+                    "cardTitle": "Евгения Владимировна Антонинкова",
+                    "cardDesc": "Врач стоматолог ортопед, стоматолог терапевт"
+                })
+                @@include("_team-card.html", {
+                    "cardClass": "swiper-slide",
+                    "cardImg": "2",
+                    "cardTitle": "Полина Владимировна Маркова",
+                    "cardDesc": "Врач стоматолог общей практики"
+                })
+                @@include("_team-card.html", {
+                    "cardClass": "swiper-slide",
+                    "cardImg": "3",
+                    "cardTitle": "Эдуард Погосович Хансанамян",
+                    "cardDesc": "Врач хирург стоматолог"
+                })
+                @@include("_team-card.html", {
+                    "cardClass": "swiper-slide",
+                    "cardImg": "4",
+                    "cardTitle": "Вероника Геннадьевна Лукьян",
+                    "cardDesc": "Гигиенист стоматологический"
+                })
+                @@include("_team-card.html", {
+                    "cardClass": "swiper-slide",
+                    "cardImg": "5",
+                    "cardTitle": "Елена Васильевна Черновицкая",
+                    "cardDesc": "Врач хирург имплантолог"
+                })
+                @@include("_team-card.html", {
+                    "cardClass": "swiper-slide",
+                    "cardImg": "6",
+                    "cardTitle": "Анна Сергеевна Добрыдина",
+                    "cardDesc": "Старшая медсестра"
+                })
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+@use 'lib' as *;
+
+.b-card {
+	$self: &;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+	&__img {
+        width: 104px; height: 72px;
+        object-fit: cover;
+        border-radius: 8px 8px 32px 0px;
+	}
+
+	&__info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+	}
+
+	&__date {
+        font-size: 14px;
+        color: #77758D;
+        line-height: 20px;
+	}
+
+	&__title {
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: color var(--trans);
+	}
+
+    &:hover &__title {
+        color: var(--green);
+    }
+
+}

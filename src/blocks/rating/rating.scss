@@ -1,0 +1,59 @@
+@use 'lib' as *;
+
+.rating {
+	$self: &;
+
+    padding: 36px 0px 40px 0px;
+
+	&__container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+
+        @include media("<=md") {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px 12px;
+        }
+
+        @include media("<=xs") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+	}
+
+	&__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+	}
+
+    &__item:hover &__item-image {
+        background-color: #F0F0F7;
+    }
+
+	&__item-image {
+        height: 64px;
+        width: 100%;
+        position: relative;
+        border-radius: 32px;
+        background-color: #F6F7FB;
+        overflow: hidden;
+        transition: background-color var(--trans);
+
+        img {
+            position: absolute;
+            top: 50%; left: 50%;
+            max-height: 120%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: darken;
+        }
+	}
+
+	&__value {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--green);
+	}
+
+}

@@ -1,0 +1,54 @@
+@use 'lib' as *;
+
+.team-card {
+	$self: &;
+
+    overflow: hidden;
+    border-radius: fluid(32px, 20px);
+    display: flex !important;
+    flex-direction: column;
+
+	&__img {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        object-fit: cover;
+	}
+
+	&__title {
+        padding: 24px 48px 24px 32px;
+        background-color: #D8EAFF;
+        font-size: fluid(18px, 14px);
+        font-weight: 700;
+        position: relative;
+        transition: color var(--trans);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 16px; right: 16px;
+            width: 16px; height: 16px;
+            background-image: url(./img/icons-1/arrow-up-right.svg);
+            background-size: cover;
+        }
+
+        @include media("<=xxxlg") {
+            padding: 24px 32px 24px 16px;
+        }
+	}
+
+	&__desc {
+        padding: 16px 16px 28px 32px;
+        background-color: #F3F8FF;
+        font-size: fluid(14px, 12px);
+        flex: 1 1 auto;
+
+        @include media("<=xxxlg") {
+            padding: 16px 16px 24px 16px;
+        }
+	}
+
+    &:hover &__title {
+        color: var(--green-hover);
+    }
+
+}

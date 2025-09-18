@@ -1,0 +1,64 @@
+@use 'lib' as *;
+
+.team {
+	$self: &;
+
+    margin-top: 50vh;
+    padding: 56px 0px 48px 0px;
+    overflow: hidden;
+
+	&__container {
+
+	}
+
+	&__up {
+        display: grid;
+        align-items: start;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        margin-bottom: 48px;
+	}
+
+	&__title {
+        grid-column: span 4;
+
+        @include media("<=lg") {
+            grid-column: span 3;
+        }
+
+        @include media("<=sm") {
+            grid-column: span 6;
+        }
+
+        @include media("<=xs") {
+            text-align: center;
+        }
+	}
+
+	&__desc {
+        grid-column: span 2 / 7;
+        font-size: fluid(16px, 12px);
+
+        @include media("<=lg") {
+            grid-column: span 3 / 7;
+        }
+
+        @include media("<=sm") {
+            grid-column: span 6;
+        }
+
+        @include media("<=xs") {
+            text-align: center;
+        }
+	}
+
+	&__swiper.swiper {
+        overflow: visible;
+        max-width: 100%;
+	}
+
+    .swiper-slide {
+        height: auto;
+    }
+
+}

@@ -38,3 +38,13 @@ updateVH();
 		xxxxlg: 1920
 	}
 }); */
+
+document.querySelectorAll('input[type="text"]').forEach(input => {
+    input.addEventListener('input', () => {
+        if(input.value.length > 0) {
+            input.classList.add('is-input');
+        } else {
+            input.classList.remove('is-input');
+        }
+    });
+});

@@ -12,15 +12,37 @@ $matches: (
 );
 
 :root {
-	--size: 16px;
-	--background: #fafafa;
-	--text: #272727;
-	--blue: #113859;
-	--blue-rgb: 17, 56, 89;
-	--container: 1400px;
+    --green: #00A9B4;
+    --red: #E31E24;
+    --neutral: #25263B;
+    --white: #FFFFFF;
+    --blue: #1A73DA;
+    --light-blue: #529EF8;
+
+    --green-hover: #00BEB8;
+
+	--size: 14px;
+	--container: 1440px;
 	--gap: 24px;
+    --trans: 0.3s ease-in-out;
 	
 	@media screen and (max-width: 480px) {
+		--gap: 16px;
+	}
+
+    @media screen and (max-width: 1680px) {
+		--container: 1260px;
+	}
+
+    @media screen and (max-width: 1100px) {
+		--container: 944px;
+	}
+
+    @media screen and (max-width: 780px) {
+		--gap: 20px;
+	}
+
+    @media screen and (max-width: 480px) {
 		--gap: 16px;
 	}
 }

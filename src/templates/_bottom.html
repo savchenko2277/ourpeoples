@@ -1,8 +1,107 @@
-<footer class="footer"> 
-  
-</footer> 
+<footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__top">
+            <a href="#" class="footer__logo">
+                <img loading="lazy" alt="image" src="./img/logo.svg">
+            </a>
+            <form action="" class="footer__form">
+                <label class="footer__label">
+                    <input type="text" placeholder="Ваш телефон">
+                </label>
+                <button type="button" aria-label="Отправить" class="footer__form-btn btn">Перезвонить мне</button>
+            </form>
+        </div>
+        <div class="footer__main">
+            <div class="footer__column">
+                <h5 class="footer__column-title">Реквизиты</h5>
+                <div class="footer__column-text">
+                    <p>
+                        ООО «ВАЙСДЕНТ» <br>
+                        ИНН: 7448183208, ОГРН: 1157448009135 <br>
+                        Лицензия: <b>№ЛО-74-01-004160</b> <br>
+                    </p>
+                    <p>
+                        Юридический адрес: <br>
+                        г. Челябинск, Пр. Краснопольский, д.23, оф. 3
+                    </p>
+                </div>
+                <a href="#" class="footer__contact footer__contact-phone">
+                    <svg>
+                        <use xlink:href="#phone"></use>
+                    </svg>
+                    <span>+7 (351) 225‒40‒36</span>
+                </a>
+                <a href="#" class="footer__contact footer__contact-mail">
+                    <svg>
+                        <use xlink:href="#mail"></use>
+                    </svg>
+                    <span>info@svl74.ru</span>
+                </a>
+                <div class="footer__shedule">
+                    <p><b>ПН — ПТ:</b>09:00 — 20:00</p>
+                    <p><b>СБ: <span>..............</span></b>09:00 — 18:00</p>
+                    <p class="red"><b>ВС: <span>..............</span></b>Выходной</p>
+                </div>
+            </div>
+            <div class="footer__column footer__column-list">
+                <h5 class="footer__column-title">Компания</h5>
+                <ul class="footer__list">
+                    <li><a href="#">О клинике</a></li>
+                    <li><a href="#">Команда</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__column footer__column-list">
+                <h5 class="footer__column-title">Популярные услуги</h5>
+                <ul class="footer__list">
+                    <li><a href="#">Имплантация</a></li>
+                    <li><a href="#">Протезирование</a></li>
+                    <li><a href="#">Лечение</a></li>
+                    <li><a href="#">Удаление</a></li>
+                    <li><a href="#">Детский прием</a></li>
+                    <li><a href="#">Гигиена полости рта</a></li>
+                    <li><a href="#">Отбеливание</a></li>
+                    <li><a href="#">Реставрация зубов</a></li>
+                </ul>
+                <a href="#" class="footer__btn-all btn">
+                    ВСЕ УСЛУГИ
+                    <img loading="lazy" alt="image" src="./img/icons-1/arrow-right.svg">
+                </a>
+            </div>
+            <div class="footer__column footer__column-blog">
+                <h5 class="footer__column-title">Блог</h5>
+                <div class="footer__blog">
+                    <div class="footer__blog-items">
+                        @@include("_b-card.html", {
+                        "cardImg": "1",
+                        "cardDate": "12 сентября 2024",
+                        "cardTitle": "Что такое гигиена полости рта?"
+                        })
+                        @@include("_b-card.html", {
+                        "cardImg": "2",
+                        "cardDate": "23 августа 2024",
+                        "cardTitle": "Зачем нужны коронки на зубы?"
+                        })
+                        @@include("_b-card.html", {
+                        "cardImg": "3",
+                        "cardDate": "3 августа 2024",
+                        "cardTitle": "Виниры на передние зубы"
+                        })
+                    </div>
+                    <a href="#" class="footer__btn-all btn">
+                        ВСЕ ПОСТЫ
+                        <img loading="lazy" alt="image" src="./img/icons-1/arrow-right.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
-<!-- @@include("_sprite.svg") -->
-<script src="common.js?v=0"></script> 
-</body> 
+@@include("_sprite.svg")
+<script src="common.js?v=0"></script>
+</body>
+
 </html>

@@ -1,0 +1,306 @@
+@use 'lib' as *;
+
+.footer {
+    $self: &;
+
+    background-color: #F2F8FF;
+    padding: 60px 0px;
+
+    @include media("<=xs") {
+        padding: 32px 0px 48px 0px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: auto minmax(auto, 424px);
+        justify-content: space-between;
+        align-items: start;
+
+        @include media("<=lg") {
+            grid-template-columns: auto minmax(auto, 554px);
+            gap: 20px;
+        }
+
+        @include media("<=md") {
+            grid-template-columns: auto minmax(auto, 448px);
+        }
+
+        @include media("<=sm") {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__logo {
+        height: 48px;
+
+        img {
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @include media("<=lg") {
+            height: 40px;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        border-radius: 28px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        background-color: var(--white);
+        box-shadow: 0px 8px 20px 0px #AFD4FF1A;
+        justify-content: space-between;
+        padding: 4px;
+        height: 56px;
+    }
+
+    &__label {
+        flex: 1 1 auto;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0px 8px 0px 24px;
+            outline: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: all var(--trans);
+
+            &.is-input {
+                font-size: 20px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__form-btn {
+        max-width: 175px;
+        width: 100%;
+        font-size: 12px;
+        color: var(--green);
+        padding: 16px 24px;
+        border-radius: 28px;
+        border: 2px solid var(--green);
+        font-weight: 700;
+        transition: all var(--trans);
+
+        &:hover {
+            border-color: var(--green-hover);
+            color: var(--green-hover);
+        }
+    }
+
+    &__main {
+        display: grid;
+        grid-template-columns: minmax(auto, 25%) auto auto 424px;
+        gap: 25px;
+
+        @include media("<=xxxlg") {
+            grid-template-columns: minmax(auto, 20%) auto auto 412px;
+        }
+
+        @include media("<=lg") {
+            grid-template-columns: minmax(auto, 20%) auto auto 304px;
+        }
+
+        @include media("<=md") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include media("<=sm") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__column {
+        &:nth-child(1) {
+            @include media("<=sm") {
+                grid-column: span 2;
+            }
+
+            @include media("<=xs") {
+                display: block;
+                padding: 0 20px;
+            }
+        }
+
+        @include media("<=xs") {
+            display: none;
+        }
+    }
+
+    &__column-title {
+        width: fit-content;
+        margin-bottom: 32px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    &__column-text {
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 28px;
+        line-height: 20px;
+
+        b {
+            color: var(--green);
+            font-weight: 400;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        width: fit-content;
+        transition: all var(--trans);
+
+        &:hover {
+            color: var(--green-hover);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: transparent;
+            stroke: var(--neutral);
+        }
+    }
+
+    &__contact-phone {}
+
+    &__contact-mail {
+        margin-bottom: 32px;
+        color: var(--green);
+        position: relative;
+
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: var(--green);
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                transition: all var(--trans);
+            }
+        }
+    }
+
+    &__shedule {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 14px;
+
+        b {
+            text-transform: uppercase;
+            font-weight: 400;
+
+            span {
+                color: #B6B5C8;
+            }
+        }
+
+        p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    &__column-list &__column-title {
+        padding-left: 21px;
+    }
+
+    &__list {
+        max-width: 195px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        a {
+            color: var(--green);
+            transition: color var(--trans);
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            line-height: 20px;
+
+            &::before {
+                content: '—';
+                font-size: 14px;
+                color: var(--neutral);
+            }
+
+            &:hover {
+                color: var(--green-hover);
+            }
+        }
+    }
+
+    &__btn-all {
+        margin-top: 32px;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px 8px 20px;
+        background-color: var(--white);
+        border-radius: 16px;
+        width: fit-content;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--green);
+        transition: color var(--trans);
+
+        &:hover {
+            color: var(--green-hover);
+        }
+
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__blog {}
+
+    &__blog-items {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    &__column-blog {
+        @include media("<=md") {
+            display: none;
+        }
+    }
+
+}

@@ -1,0 +1,72 @@
+@use 'lib' as *;
+
+.articles {
+	$self: &;
+
+    padding: 53px 0px 63px 0px;
+    overflow: hidden;
+    border-top: 1px solid #EAE9F3;
+    border-bottom: 1px solid #EAE9F3;
+
+	&__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+	}
+
+	&__title {
+        margin-bottom: 44px;
+        align-self: flex-start;
+	}
+
+	&__swiper.swiper {
+        overflow: visible;
+        max-width: 100%;
+        margin-bottom: 48px;
+        width: 100%;
+	}
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    &__btn {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--green);
+        font-weight: 700;
+        position: relative;
+        transition: color var(--trans);
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: var(--green);
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            transition: all var(--trans);
+        }
+
+        &:hover {
+            color: var(--green-hover);
+            &::after {
+                background-color: var(--green-hover);
+            }
+        }
+    }
+
+    &__round {
+        position: absolute;
+        top: 0px; right: 44px;
+        width: 140px; height: 140px;
+        z-index: 2;
+
+        @include media("<=sm") {
+            display: none;
+        }
+    }
+
+}
