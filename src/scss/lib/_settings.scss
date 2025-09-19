@@ -36,6 +36,10 @@
     font-size: fluid(32px, 20px);
 }
 
+.title-56 {
+    font-size: fluid(56px, 20px);
+}
+
 .custom-input {
     padding: 16px 28px;
     background: var(--white);
@@ -57,4 +61,34 @@
 
 .p-top {
     padding-top: var(--header-height);
+}
+
+.custom-navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+
+    &__btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 56px; height: 56px;
+        border-radius: 100%;
+        background-color: #FFFFFF;
+
+        svg {
+            height: 21px; width: 14px;
+            fill: var(--green);
+            object-fit: cover;
+            transition: all var(--trans);
+        }
+
+        &:hover {
+            svg {
+                fill: var(--green-hover);
+            }
+        }
+    }
 }

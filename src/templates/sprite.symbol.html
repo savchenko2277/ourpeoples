@@ -105,6 +105,8 @@ They might well be outsourced to an external stylesheet of course.
 -->
 
 <style>
+ .svg-arrow-left-dims { width: 14px; height: 21px; }
+ .svg-arrow-right-dims { width: 14px; height: 21px; }
  .svg-calendar-dims { width: 20px; height: 20px; }
  .svg-location-dims { width: 20px; height: 20px; }
  .svg-mail-dims { width: 20px; height: 20px; }
@@ -131,6 +133,8 @@ for further details on how to create this embeddable sprite variant.
 -->
 
 <svg width="0" height="0" style="position:absolute">
+     <symbol viewBox="0 0 14 21" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path d="M12.914.586a2 2 0 0 0-2.828 0L.172 10.5l9.914 9.914a2 2 0 1 0 2.828-2.828L5.828 10.5l7.086-7.086a2 2 0 0 0 0-2.828Z"/></symbol>
+     <symbol viewBox="0 0 14 21" id="arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M.586.586a2 2 0 0 1 2.828 0l9.914 9.914-9.914 9.914a2 2 0 1 1-2.828-2.828L7.672 10.5.586 3.414a2 2 0 0 1 0-2.828Z"/></symbol>
      <symbol viewBox="0 0 20 20" id="calendar" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="18" height="16" rx="3" stroke-width="2"/><path d="M5 1v3M15 1v3" stroke-width="2" stroke-linecap="round"/><path d="M4 7h12M4 11h12M4 15h12M5 8v8M10 8v8M15 8v8" stroke-width="2"/></symbol>
      <symbol viewBox="0 0 20 20" id="location" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="9" r="2.25" stroke-width="1.5"/><path d="M10 1.75a7.25 7.25 0 0 1 5.014 12.487l-4.842 4.57a.25.25 0 0 1-.344 0l-4.842-4.57A7.25 7.25 0 0 1 10 1.75Z" stroke-width="1.5"/></symbol>
      <symbol viewBox="0 0 20 20" id="mail" xmlns="http://www.w3.org/2000/svg"><rect x="1.75" y="3.75" width="16.5" height="12.5" rx="1.25" stroke-width="1.5"/><path d="m2 8 7.106 3.553a2 2 0 0 0 1.788 0L18 8" stroke-width="1.5"/></symbol>
@@ -162,6 +166,22 @@ embedded above. They may be styled via CSS.
             <h3>A) Inline SVG with embedded sprite</h3>
             <ul>
 
+             <li title="arrow-left">
+                    <div class="icon-box">
+                        <svg class="svg-arrow-left-dims">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </div>
+                    <h2>arrow-left, </h2>
+                </li>
+             <li title="arrow-right">
+                    <div class="icon-box">
+                        <svg class="svg-arrow-right-dims">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </div>
+                    <h2>arrow-right, </h2>
+                </li>
              <li title="calendar">
                     <div class="icon-box">
                         <svg class="svg-calendar-dims">
@@ -221,6 +241,22 @@ SVG sprite. They may be styled via CSS.
             <h3>B) Inline SVG with external sprite</h3>
             <ul>
 
+             <li title="arrow-left">
+                    <div class="icon-box">
+                        <svg class="svg-arrow-left-dims">
+                            <use xlink:href="_sprite.svg#arrow-left"></use>
+                        </svg>
+                    </div>
+                    <h2>arrow-left</h2>
+                </li>
+             <li title="arrow-right">
+                    <div class="icon-box">
+                        <svg class="svg-arrow-right-dims">
+                            <use xlink:href="_sprite.svg#arrow-right"></use>
+                        </svg>
+                    </div>
+                    <h2>arrow-right</h2>
+                </li>
              <li title="calendar">
                     <div class="icon-box">
                         <svg class="svg-calendar-dims">
@@ -269,7 +305,7 @@ SVG sprite. They may be styled via CSS.
 
         </section>
         <footer>
-            <p>Generated at Thu, 18 Sep 2025 07:52:59 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+            <p>Generated at Fri, 19 Sep 2025 14:58:37 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
         </footer>
     </body>
 </html>

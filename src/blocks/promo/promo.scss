@@ -8,24 +8,50 @@
     }
 
 	&__container {
-        min-height: 520px;
-        background: var(--blue);
-
-        @include media("<=xxxlg") {
-            min-height: 440px;
-        }
-
-        @include media("<=lg") {
-            min-height: 340px;
-        }
-
-        @include media("<=sm") {
-            min-height: 255px;
-        }
+        display: flex;
 	}
 
-	&__swiper {
+	&__swiper.swiper {
+        height: 100%; width: 100%;
 
+        .swiper-navigation {
+            position: absolute;
+            bottom: 78px; left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            justify-content: end;
+
+            @include media("<=sm") {
+                display: none;
+            }
+        }
+
+        .swiper-pagination {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            
+            span {
+                width: 10px; height: 10px;
+                border-radius: 100%;
+                background-color: #fff;
+                transition: all var(--trans);
+            }
+
+            span.swiper-pagination-bullet-active {
+                background-color: var(--red);
+            }
+
+            @include media("<=sm") {
+                display: none;
+            }
+        }
 	}
 
 }
