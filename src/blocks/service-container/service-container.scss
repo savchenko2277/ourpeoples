@@ -1,0 +1,291 @@
+@use 'lib' as *;
+
+.service-container {
+    $self: &;
+
+    // overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding-bottom: 80px;
+
+    .container {
+        display: grid;
+        grid-template-columns: 322px 1fr;
+        gap: 28px;
+
+        @include media("<=xlg") {
+            grid-template-columns: 100%;
+        }
+    }
+
+    .section-top {
+        margin-bottom: 36px;
+    }
+
+    &__content {
+        @include media("<=xlg") {
+            order: -1;
+            padding-top: var(--header-height);
+        }
+    }
+
+    &__text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        margin-bottom: 30px;
+    }
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: sticky;
+        top: var(--header-height);
+        left: 0;
+        height: fit-content;
+
+        @include media("<=xlg") {
+            position: static;
+        }
+    }
+
+    &__columns {
+        display: grid;
+        grid-template-columns: 1fr 276px;
+        gap: 60px;
+        position: relative;
+        margin-bottom: 60px;
+
+        @include media("<=lg") {
+            grid-template-columns: 1fr 248px;
+        }
+
+        @include media("<=md") {
+            gap: 16px;
+            grid-template-columns: 1fr 232px;
+        }
+
+        @include media("<=xs") {
+            grid-template-columns: 100%;
+            gap: 36px;
+        }
+    }
+
+    &__section {
+        padding: 0 32px;
+        line-height: 150%;
+
+        > h2 {
+            font-size: fluid(28px, 20px);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            padding-left: 28px;
+            
+            li {
+                list-style-type: disc;
+                font-size: 16px;
+            }
+        }
+
+        @include media("<=lg") {
+            padding: 0;
+        }
+    }
+
+    &__column-side {
+        position: sticky;
+        top: var(--header-height); left: 0;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .btn {
+            padding: 16px 0px;
+            width: 100%;
+        }
+    }
+
+    &__questions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: #E8F6FF;
+        border-radius: 20px;
+        padding: 28px;
+
+        .btn {
+            padding: 6px 24.5px;
+            line-height: 150%;
+            max-width: 162px;
+            font-size: 12px;
+        }
+    }
+
+    &__questions-text {
+        margin-bottom: 20px;
+        max-width: 220px;
+    }
+
+    &__questions-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 16px;
+
+        b {
+            color: var(--green);
+        }
+    }
+
+    &__table {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    &__table-top {
+        background-color: #F6F7FB;
+        font-weight: 700;
+    }
+
+    &__table-row {
+        padding: 12px 32px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        gap: 24px;
+
+        &:not(:first-child) {
+            border-bottom: 1px solid #EAE9F3;
+        }
+
+        p {
+            max-width: 500px;
+        }
+
+        > b {
+            text-wrap: nowrap;
+        }
+
+        @include media("<=lg") {
+            padding: 12px 16px;
+        }
+    }
+
+    &__sections {
+        display: grid;
+        grid-template-columns: 1fr 276px;
+        gap: 60px;
+        position: relative;
+        overflow: hidden;
+
+        @include media("<=lg") {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &__team.swiper {
+        max-width: 100%;
+        .swiper-wrapper {
+            max-width: 100%;
+            @include media(">lg") {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        .team-card.swiper-slide {
+            @include media(">lg") {
+                width: auto !important;
+            }
+        }
+    }
+
+    &__section-title {
+        font-size: fluid(28px, 20px);
+        margin-bottom: 28px;
+        padding-left: 32px;
+    }
+
+    &__form-section {
+        padding: 48px 56px;
+        background: #D8EAFF;
+        border-radius: 32px;
+
+        .title {
+            padding: 0;
+        }
+
+        @include media("<=sm") {
+            padding: 24px 20px 28px 20px;
+        }
+    }
+
+    &__team-section {
+        margin-bottom: 60px;
+    }
+
+    &__form-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 12px;
+        margin-bottom: 24px;
+
+        .custom-input:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        @include media("<=sm") {
+            .custom-input {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    &__form-bottom {
+        display: flex;
+        gap: 24px;
+
+        .btn {
+            padding: 20px 28px;
+            border-radius: 28px;
+        }
+
+        p {
+            font-size: 12px;
+            a {
+                color: var(--blue);
+            }
+        }
+
+        @include media("<=xs") {
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    &__sections-container {
+        min-width: 0;
+    }
+
+}

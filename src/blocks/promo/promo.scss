@@ -21,6 +21,7 @@
             z-index: 10;
             display: flex;
             justify-content: end;
+            pointer-events: none;
 
             @include media("<=sm") {
                 display: none;
@@ -36,6 +37,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
+            pointer-events: auto;
             
             span {
                 width: 10px; height: 10px;

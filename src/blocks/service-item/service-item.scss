@@ -1,0 +1,74 @@
+@use 'lib' as *;
+
+.service-item {
+    $self: &;
+
+    background-color: #F6F7FB;
+
+    &__top {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        align-items: center;
+        padding: 12px 20px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    &__content {
+        padding: 8px 22px 12px 72px;
+    }
+
+    &__arrow {
+        padding: 8px 0px;
+        flex: 1 1 auto;
+        font-size: 15px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 16px; height: 16px;
+            background: url('./img/arrow-l.webp') no-repeat center / cover;
+            transition: transform var(--trans);
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            padding: 4px 0px;
+            font-size: 15px;
+        }
+    }
+
+     &.active > .service-item__top > .service-item__arrow {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    .accordeon:not(.service-item).active .service-item__arrow {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+
+    .accordeon:not(.service-item) .service-item__arrow {
+        &::after {
+            width: 12px; height: 12px;
+        }
+    }
+
+}

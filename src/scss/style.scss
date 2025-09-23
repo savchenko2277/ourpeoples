@@ -39,6 +39,15 @@
 @include font-face("rawline-400", "rawline", 400);
 @include font-face("RobotoSerif-Regular", "RobotoSerif", 400);
 
+section {
+    max-width: 1920px;
+    width: 100%;
+}
+
+header, footer {
+    width: 100%;
+}
+
 body,
 html {
     // scrollbar-gutter: stable;
@@ -54,7 +63,9 @@ html {
     font-weight: 400;
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     min-height: 100vh;
+    width: 100%;
 }
 
 .footer {

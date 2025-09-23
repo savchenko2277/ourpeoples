@@ -1,0 +1,28 @@
+@use 'lib' as *;
+
+.accordeon {
+	$self: &;
+
+    display: grid;
+    grid-template-rows: max-content 0fr;
+    transition: grid-template-rows var(--trans);
+
+    &.active {
+        grid-template-rows: max-content 1fr;
+    }
+
+	&__btn {
+        cursor: pointer;
+	}
+
+    &:not(.active) &__content {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+	&__content {
+        overflow: hidden;
+        transition: padding var(--trans);
+	}
+
+}

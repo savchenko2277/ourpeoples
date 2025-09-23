@@ -1,0 +1,80 @@
+@@include("_head.html", {"id":"home"}) 
+@@include("_header.html") 
+
+@@include("_section-top.html", {
+    "sectionClass":"p-top",
+    "sectionTitle":"Контакты",
+    "pageName":"Контакты"
+}) 
+
+<section class="contacts">
+    <div class="contacts__container container">
+        <div class="contacts__card contacts__card_info">
+            <h3 class="contacts__card-title title">Стоматология «Свои люди»</h3>
+            <div class="contacts__card-items">
+                <div class="contacts__item">
+                    <a href="#" class="contacts__contact">
+                        <svg><use xlink:href="#location"></use></svg>
+                        <span>Челябинск, Краснопольский проспект, 23</span>
+                    </a>
+                    <ul class="contacts__schedule">
+                        <li>ПН-ПТ 9.00—20.00</li>
+                        <li>СБ 9.00—18.00</li>
+                        <li><b>ВС</b> выходной</li>
+                    </ul>
+                </div>
+                <div class="contacts__item">
+                    <a href="#" class="contacts__contact">
+                        <svg><use xlink:href="#phone"></use></svg>
+                        <span>+7 (351) 225‒40‒36</span>
+                    </a>
+                </div>
+                <div class="contacts__item">
+                    <a href="#" class="contacts__contact contacts__contact_mail">
+                        <svg><use xlink:href="#mail"></use></svg>
+                        <span>info@svl74.ru</span>
+                    </a>
+                </div>
+            </div>
+            <div class="contacts__card-bottom">
+                <div class="contacts__socials">
+                    <a href="#" class="contacts__socials-item">
+                        <img loading="lazy" alt="image" src="./img/icons-1/telega.svg">
+                    </a>
+                    <a href="#" class="contacts__socials-item">
+                        <img loading="lazy" alt="image" src="./img/icons-1/whatsapp.svg">
+                    </a>
+                </div>
+                <b>Присоединяйтесь к нашим каналам</b>
+            </div>
+        </div>
+        <div class="contacts__card contacts__card_form">
+            <h3 class="contacts__card-title title">Напишите нам и мы перезвоним</h3>
+            <form action="" class="contacts__form">
+                <div class="custom-input">
+                    <span>Ваше имя<b>*</b></span>
+                    <input type="text" required>
+                </div>
+                <div class="custom-input">
+                    <span>Ваш контактный телефон<b>*</b></span>
+                    <input type="text" required>
+                </div>
+                <div class="custom-input">
+                    <span>Сообщение</span>
+                    <textarea required></textarea>
+                </div>
+                <div class="contacts__form-bottom">
+                    <button type="submit" aria-label="ОТПРАВИТЬ" class="contacts__form-btn btn btn-green">ОТПРАВИТЬ</button>
+                    <p>
+                        Нажимая на кнопку «Отправить», вы даете согласие
+                        на обработку персональных данных и соглашаетесь
+                        c <a href="#">политикой конфиденциальности</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div id="map" class="contacts__map"></div>
+    </div>
+</section>
+
+@@include("_bottom.html")

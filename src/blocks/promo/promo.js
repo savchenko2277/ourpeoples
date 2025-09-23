@@ -9,6 +9,7 @@ import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
         spaceBetween: 0,
         effect: 'fade',
         loop: true,
+        allowTouchMove: false,
         fadeEffect: {
             crossFade: true,
 

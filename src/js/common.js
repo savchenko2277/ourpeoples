@@ -48,3 +48,12 @@ document.querySelectorAll('input[type="text"]').forEach(input => {
         }
     });
 });
+
+document.querySelectorAll(".accordeon").forEach(accordeon => {
+    const accordeonBtn = accordeon.querySelector('.accordeon__btn');
+    const accordeonContent = accordeon.querySelector('.accordeon__content');
+
+    accordeonBtn.addEventListener('click', () => {
+        accordeon.classList.toggle('active');
+    })
+})
