@@ -1,0 +1,24 @@
+@use 'lib' as *;
+
+.offers-second {
+	$self: &;
+
+    padding-top: 36px;
+    padding-bottom: 80px;
+
+	&__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        @include media("<=xlg") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @include media("<=xs") {
+            grid-template-columns: 100%;
+        }
+	}
+
+}

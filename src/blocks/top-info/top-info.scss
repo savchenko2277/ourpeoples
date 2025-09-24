@@ -1,7 +1,7 @@
 @use 'lib' as *;
 
 .top-info {
-	$self: &;
+    $self: &;
 
     display: flex;
     flex-direction: row;
@@ -10,16 +10,51 @@
     flex-wrap: wrap;
     gap: 8px;
 
-	&__info {
+    &__info {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 1px;
         border-radius: 20px;
         overflow: hidden;
-	}
+    }
 
-	&__column {
+    &_modal {
+        #{$self}__info {
+            flex: 1 1 auto;
+        }
+
+        #{$self}__column:nth-child(2) {
+            flex: 0 0 auto;
+        }
+    }
+
+    &:not(.top-info_modal) &__column svg {
+        @include media("<=lg") {
+            display: none;
+        }
+    }
+
+    &:not(.top-info_modal) &__column {
+        @include media("<=lg") {
+            font-size: 11px;
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__column:not(.top-info_modal) &__price {
+        @include media("<=lg") {
+            font-size: 18px;
+            height: 32px;
+            width: 81.18px;
+            padding: 6px 12px;
+        }
+    }
+
+    &__column {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -43,25 +78,14 @@
         }
 
         svg {
-            width: 20px; height: 20px;
+            width: 20px;
+            height: 20px;
             fill: transparent;
             stroke: var(--blue);
-
-            @include media("<=lg") {
-                display: none;
-            }
         }
+    }
 
-        @include media("<=lg") {
-            font-size: 11px;
-
-            span {
-                display: none;
-            }
-        }
-	}
-
-	&__promo {
+    &__promo {
         height: 40px;
         width: 89px;
         font-size: 20px;
@@ -70,12 +94,6 @@
         background: url(./img/promo-d-bg.svg) no-repeat center / cover;
         color: var(--white);
         flex: 0 0 auto;
-
-        @include media("<=lg") {
-            font-size: 18px;
-            height: 32px; width: 81.18px;
-            padding: 6px 12px;
-        }
-	}
+    }
 
 }

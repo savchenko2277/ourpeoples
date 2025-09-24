@@ -6,6 +6,90 @@
     width: 100%;
     max-width: 1920px;
     color: var(--white);
+    overflow: hidden;
+
+    &_image {
+        #{$self}__image-long {
+            
+            height: 240px;
+            grid-column: span 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 240px; height: 100%;
+                background: #E8F6FF;
+                z-index: 0;
+            }
+
+            img {
+                width: var(--container); height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 1;
+
+                @include media("<=xlg") {
+                    width: 100%;
+                }
+            }
+
+            @include media("<=lg") {
+                height: 250px;
+            }
+
+            @include media("<=xs") {
+                height: 120px;
+            }
+        }
+    }
+
+    &_profile {
+
+        #{$self}__container {
+            grid-template-columns: minmax(auto, 1080px);
+            justify-content: end;
+
+            @include media("<=xxxlg") {
+                grid-template-columns: minmax(auto, 920px);
+            }
+
+            @include media("<=xlg") {
+                grid-template-columns: 100%;
+                justify-content: start;
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+
+        #{$self}__main {
+            width: auto;
+            position: relative;
+            overflow: visible;
+
+            &::before {
+                content: '';
+                position: absolute;
+                right: 100%; top: 0;
+                width: 600px; height: 100%;
+                background: url('./img/left-side.webp') no-repeat left / cover;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 100%; top: 0;
+                width: 240px; height: 100%;
+                background: url('./img/stars-side.webp') no-repeat right / cover;
+            }
+        }
+    }
 
     &_service {
 
@@ -15,6 +99,8 @@
 
         #{$self}__image {
             position: relative;
+            border-radius: 0px 0px 120px 0px;
+            overflow: hidden;
 
             // &::after {
             //     content: '';
@@ -25,11 +111,15 @@
             //     height: 100%;
             //     background: #E9F6FF;
             // }
+
+            @include media("<=lg") {
+                border-radius: 0;
+            }
         }
 
         #{$self}__main {
             width: 100%;
-            border-radius: 20px 20px 0px 0px;
+            border-radius: 20px 0px 0px 0px;
             overflow: hidden;
             position: relative;
 
@@ -42,6 +132,10 @@
             //     height: 100%;
             //     background: url('./img/stars-side.webp') no-repeat left / cover;
             // }
+
+            @include media("<=lg") {
+                border-radius: 0;
+            }
         }
 
         #{$self}__right {
@@ -54,7 +148,7 @@
     }
 
     &__image {
-        height: 284px;
+        height: fluid(284px, 120px);
         width: 100%;
 
         img {
@@ -106,6 +200,7 @@
             height: 100%;
             background: url('./img/section-right.webp') no-repeat right / contain;
             pointer-events: none;
+            z-index: 0;
 
             @include media("<=xs") {
                 display: none;
@@ -126,11 +221,20 @@
         }
     }
 
+    &__subtitle {
+        font-weight: 500;
+        font-size: fluid(18px, 14px);
+        position: relative;
+        z-index: 1;
+    }
+
     &__list {
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: 8px;
+        position: relative;
+        z-index: 1;
     }
 
     &__list-item {
@@ -158,6 +262,8 @@
         font-weight: 700;
         font-size: fluid(36px, 24px);
         line-height: 150%;
+        position: relative;
+        z-index: 1;
     }
 
     &__right {

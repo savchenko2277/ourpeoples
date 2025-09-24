@@ -4,3 +4,8 @@ import "../blocks/team/team.js";
 import "../blocks/offers/offers.js";
 import "../blocks/map/map.js";
 import "../blocks/promo/promo.js";
+import "../blocks/modal/modal.js";
+import "../blocks/offers-card/offers-card.js";
+import "../blocks/service-container/service-container.js";
+import "../blocks/info-block/info-block.js";
+import "../blocks/cookies/cookies.js";

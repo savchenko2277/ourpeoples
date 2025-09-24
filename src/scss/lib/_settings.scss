@@ -125,18 +125,46 @@
         border-radius: 100%;
         background-color: #FFFFFF;
 
+        &.swiper-button-disabled {
+            svg {
+                stroke: #D5D4E2;
+            }
+        }
+
         svg {
-            height: 21px;
-            width: 14px;
-            fill: var(--green);
+            height: 18px;
+            width: 18px;
+            fill: transparent;
+            stroke: var(--green);
             object-fit: cover;
             transition: all var(--trans);
         }
 
         &:hover {
             svg {
-                fill: var(--green-hover);
+                stroke: var(--green-hover);
             }
+        }
+    }
+}
+
+.scroll-padlock {
+  overflow: hidden;
+
+  padding-right: var(--scrollbar-width);
+}
+
+.list-blue {
+    padding-left: 0 !important;
+    li {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        &::before {
+            content: '—';
+            display: block;
+            color: var(--blue);
         }
     }
 }

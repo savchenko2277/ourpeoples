@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css?v=1758749834421">
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init() {
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [55.76, 37.64],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 7
+            });
+        }
+    </script>
+
+
+    <title></title>
+</head>
+
+<body id="home" >
+<header data-header-js class="header">
+    <div class="header__container">
+        <div class="header__top">
+            <div class="header__top-container container">
+                <a href="tel:+73512254036" class="header__top-link header__call header__top_in-mobile">
+                    <svg>
+                        <use xlink:href="#phone"></use>
+                    </svg>
+                    +7 (351) 225‒40‒36
+                </a>
+                <a href="#" class="header__top-link header__address header__top_in-mobile">
+                    <svg>
+                        <use xlink:href="#location"></use>
+                    </svg>
+                    Челябинск, ​Краснопольский проспект, 23
+                </a>
+                <ul class="header__schedule header__top_in-mobile">
+                    <li>ПН-ПТ 9.00—20.00</li>
+                    <li>СБ 9.00—18.00 </li>
+                    <li><b>ВС</b> выходной</li>
+                </ul>
+                <div class="header__link-icons header__top_in-mobile">
+                    <a href="#" class="header__link-icon">
+                        <img loading="lazy" alt="image" src="./img/icons-1/telega.svg">
+                    </a>
+                    <a href="#" class="header__link-icon">
+                        <img loading="lazy" alt="image" src="./img/icons-1/whatsapp.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="header__main-container container">
+                <button type="button" aria-label="Меню" class="header__burger">
+                    <div class="header__burger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>МЕНЮ</span>
+                </button>
+                <a href="./" class="header__logo">
+                    <img loading="lazy" alt="image" src="./img/logo.svg">
+                </a>
+                <ul class="header__list">
+                    <li class="header__list-item header__accordeon">
+                        <a href="#">
+                            О стоматологии
+                            <button type="button" aria-label="Открыть" class="header__accordeon-btn">
+                                <img loading="lazy" alt="image" src="./img/icons-1/arrow-down.svg">
+                            </button>
+                        </a>
+                        <ul class="header__accordeon-list">
+                            <li class="header__accordeon-link"><a href="#">Имплантация</a></li>
+                            <li class="header__accordeon-link"><a href="#">Протезирование</a></li>
+                            <li class="header__accordeon-link"><a href="#">Лечение зубов</a></li>
+                            <li class="header__accordeon-link"><a href="#">Удаление зубов</a></li>
+                            <li class="header__accordeon-link"><a href="#">Детский приём</a></li>
+                            <li class="header__accordeon-link"><a href="#">Гигиена полости рта</a></li>
+                            <li class="header__accordeon-link"><a href="#">Отбеливание</a></li>
+                            <li class="header__accordeon-link"><a href="#">Реставрация зубов</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__list-item header__accordeon">
+                        <a href="#">
+                            Услуги
+                            <button type="button" aria-label="Открыть" class="header__accordeon-btn">
+                                <img loading="lazy" alt="image" src="./img/icons-1/arrow-down.svg">
+                            </button>
+                        </a>
+                        <ul class="header__accordeon-list">
+                            <li class="header__accordeon-link"><a href="#">Имплантация</a></li>
+                            <li class="header__accordeon-link"><a href="#">Протезирование</a></li>
+                            <li class="header__accordeon-link"><a href="#">Лечение зубов</a></li>
+                            <li class="header__accordeon-link"><a href="#">Удаление зубов</a></li>
+                            <li class="header__accordeon-link"><a href="#">Детский приём</a></li>
+                            <li class="header__accordeon-link"><a href="#">Гигиена полости рта</a></li>
+                            <li class="header__accordeon-link"><a href="#">Отбеливание</a></li>
+                            <li class="header__accordeon-link"><a href="#">Реставрация зубов</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">Выгодные предложения</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">Команда</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">Наши работы</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">Отзывы</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#">Контакты</a>
+                    </li>
+                </ul>
+                <button type="button" aria-label="Заказать звонок" class="header__btn btn btn-green">
+                    <svg><use xlink:href="#phone"></use></svg>
+                    <span>Заказать звонок</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header__mobile-menu">
+        <div class="header__mobile-container container">
+            <div class="header__mobile-column header__mobile-column_left">
+
+            </div>
+            <div class="header__mobile-column header__mobile-column_right">
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="section-top p-top">
+    <div class="section-top__container">
+        <div class="section-top__left">
+            <img loading="lazy" alt="image" src="./img/duga.webp">
+        </div>
+        <div class="section-top__main">
+            <ul class="section-top__list">
+                <li class="section-top__list-item"><a href="#">Главная</a></li>
+                <li class="section-top__list-item"><a href="#">Отзывы</a></li>
+            </ul>
+            <h1 class="section-top__title title">Отзывы</h1>
+        </div>
+        <div class="section-top__right">
+            <img loading="lazy" alt="image" src="./img/stars-side.webp">
+        </div>
+    </div>
+</div>
+
+<section class="rating">
+    <div class="rating__container container">
+        <a href="#" class="rating__item">
+            <div class="rating__item-image">
+                <img loading="lazy" alt="image" src="./img/rating/1.webp">
+            </div>
+            <b class="rating__value">5/5</b>
+        </a>
+        <a href="#" class="rating__item">
+            <div class="rating__item-image">
+                <img loading="lazy" alt="image" src="./img/rating/2.webp">
+            </div>
+            <b class="rating__value">4.8/5</b>
+        </a>
+        <a href="#" class="rating__item">
+            <div class="rating__item-image">
+                <img loading="lazy" alt="image" src="./img/rating/3.webp">
+            </div>
+            <b class="rating__value">5/5</b>
+        </a>
+        <a href="#" class="rating__item">
+            <div class="rating__item-image">
+                <img loading="lazy" alt="image" src="./img/rating/4.webp">
+            </div>
+            <b class="rating__value">5/5</b>
+        </a>
+        <a href="#" class="rating__item">
+            <div class="rating__item-image">
+                <img loading="lazy" alt="image" src="./img/rating/5.webp">
+            </div>
+            <b class="rating__value">4.9/5</b>
+        </a><a href="#" class="rating__item">
+            <div class="rating__item-image">
+                <img loading="lazy" alt="image" src="./img/rating/6.webp">
+            </div>
+            <b class="rating__value">5/5</b>
+        </a>
+    </div>
+</section>
+
+<section class="reviews">
+    <div class="reviews__container container">
+        <div class="reviews__item">
+            <p class="reviews__item-title">
+                Услуга
+                <b>Установка виниров</b>
+            </p>
+            <div class="reviews__item-content">
+                <p class="reviews__item-name">Светлана</p>
+                <p class="reviews__item-text">
+                    Я годами комплексовала из-за щели между передними зубами и желтоватого оттенка эмали. Улыбалась только губами. Решилась на консультацию в «Свои люди» и ни капли не пожалела! Доктор предложила виниры. Весь процесс — от слепков до фиксации — прошел невероятно комфортно. Обтачивали совсем немного, под анестезией не чувствовала ничего. Когда сняли защитные пластинки и я увидела свою новую улыбку в зеркале. Идеально ровные, белоснежные, абсолютно естественные зубы! Теперь я не просто улыбаюсь — я сияю! Уход простой, как за своими зубами. Спасибо за мою уверенность! Рекомендую виниры в «Свои люди» на 200% — настоящие профессионалы.
+                </p>
+            </div>
+            <div class="reviews__item-rating">
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+            </div>
+        </div>
+        <div class="reviews__item">
+            <p class="reviews__item-title">
+                Услуга
+                <b>Установка виниров</b>
+            </p>
+            <div class="reviews__item-content">
+                <p class="reviews__item-name">Светлана</p>
+                <p class="reviews__item-text">
+                    Я годами комплексовала из-за щели между передними зубами и желтоватого оттенка эмали. Улыбалась только губами. Решилась на консультацию в «Свои люди» и ни капли не пожалела! Доктор предложила виниры. Весь процесс — от слепков до фиксации — прошел невероятно комфортно. Обтачивали совсем немного, под анестезией не чувствовала ничего. Когда сняли защитные пластинки и я увидела свою новую улыбку в зеркале. Идеально ровные, белоснежные, абсолютно естественные зубы! Теперь я не просто улыбаюсь — я сияю! Уход простой, как за своими зубами. Спасибо за мою уверенность! Рекомендую виниры в «Свои люди» на 200% — настоящие профессионалы.
+                </p>
+            </div>
+            <div class="reviews__item-rating">
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+            </div>
+        </div>
+        <div class="reviews__item">
+            <p class="reviews__item-title">
+                Услуга
+                <b>Установка виниров</b>
+            </p>
+            <div class="reviews__item-content">
+                <p class="reviews__item-name">Светлана</p>
+                <p class="reviews__item-text">
+                    Я годами комплексовала из-за щели между передними зубами и желтоватого оттенка эмали. Улыбалась только губами. Решилась на консультацию в «Свои люди» и ни капли не пожалела! Доктор предложила виниры. Весь процесс — от слепков до фиксации — прошел невероятно комфортно. Обтачивали совсем немного, под анестезией не чувствовала ничего. Когда сняли защитные пластинки и я увидела свою новую улыбку в зеркале. Идеально ровные, белоснежные, абсолютно естественные зубы! Теперь я не просто улыбаюсь — я сияю! Уход простой, как за своими зубами. Спасибо за мою уверенность! Рекомендую виниры в «Свои люди» на 200% — настоящие профессионалы.
+                </p>
+            </div>
+            <div class="reviews__item-rating">
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+                <svg fill="#FFCF0F"><use xlink:href="#star"></use></svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__top">
+            <a href="#" class="footer__logo">
+                <img loading="lazy" alt="image" src="./img/logo.svg">
+            </a>
+            <form action="" class="footer__form">
+                <label class="footer__label">
+                    <input type="text" placeholder="Ваш телефон">
+                </label>
+                <button type="button" aria-label="Отправить" class="footer__form-btn btn">Перезвонить мне</button>
+            </form>
+        </div>
+        <div class="footer__main">
+            <div class="footer__column">
+                <h5 class="footer__column-title">Реквизиты</h5>
+                <div class="footer__column-text">
+                    <p>
+                        ООО «ВАЙСДЕНТ» <br>
+                        ИНН: 7448183208, ОГРН: 1157448009135 <br>
+                        Лицензия: <b>№ЛО-74-01-004160</b> <br>
+                    </p>
+                    <p>
+                        Юридический адрес: <br>
+                        г. Челябинск, Пр. Краснопольский, д.23, оф. 3
+                    </p>
+                </div>
+                <a href="#" class="footer__contact footer__contact-phone">
+                    <svg>
+                        <use xlink:href="#phone"></use>
+                    </svg>
+                    <span>+7 (351) 225‒40‒36</span>
+                </a>
+                <a href="#" class="footer__contact footer__contact-mail">
+                    <svg>
+                        <use xlink:href="#mail"></use>
+                    </svg>
+                    <span>info@svl74.ru</span>
+                </a>
+                <div class="footer__shedule">
+                    <p><b>ПН — ПТ:</b>09:00 — 20:00</p>
+                    <p><b>СБ: <span>..............</span></b>09:00 — 18:00</p>
+                    <p class="red"><b>ВС: <span>..............</span></b>Выходной</p>
+                </div>
+            </div>
+            <div class="footer__column footer__column-list">
+                <h5 class="footer__column-title">Компания</h5>
+                <ul class="footer__list">
+                    <li><a href="#">О клинике</a></li>
+                    <li><a href="#">Команда</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer__column footer__column-list">
+                <h5 class="footer__column-title">Популярные услуги</h5>
+                <ul class="footer__list">
+                    <li><a href="#">Имплантация</a></li>
+                    <li><a href="#">Протезирование</a></li>
+                    <li><a href="#">Лечение</a></li>
+                    <li><a href="#">Удаление</a></li>
+                    <li><a href="#">Детский прием</a></li>
+                    <li><a href="#">Гигиена полости рта</a></li>
+                    <li><a href="#">Отбеливание</a></li>
+                    <li><a href="#">Реставрация зубов</a></li>
+                </ul>
+                <a href="#" class="footer__btn-all btn">
+                    ВСЕ УСЛУГИ
+                    <img loading="lazy" alt="image" src="./img/icons-1/arrow-right.svg">
+                </a>
+            </div>
+            <div class="footer__column footer__column-blog">
+                <h5 class="footer__column-title">Блог</h5>
+                <div class="footer__blog">
+                    <div class="footer__blog-items">
+                        <a href="#" class="b-card">
+    <img src="./img/b-cards/1.webp" alt="" class="b-card__img">
+    <div class="b-card__info">
+        <p class="b-card__date">12 сентября 2024</p>
+        <h5 class="b-card__title">Что такое гигиена полости рта?</h5>
+    </div>
+</a>
+                        <a href="#" class="b-card">
+    <img src="./img/b-cards/2.webp" alt="" class="b-card__img">
+    <div class="b-card__info">
+        <p class="b-card__date">23 августа 2024</p>
+        <h5 class="b-card__title">Зачем нужны коронки на зубы?</h5>
+    </div>
+</a>
+                        <a href="#" class="b-card">
+    <img src="./img/b-cards/3.webp" alt="" class="b-card__img">
+    <div class="b-card__info">
+        <p class="b-card__date">3 августа 2024</p>
+        <h5 class="b-card__title">Виниры на передние зубы</h5>
+    </div>
+</a>
+                    </div>
+                    <a href="#" class="footer__btn-all btn">
+                        ВСЕ ПОСТЫ
+                        <img loading="lazy" alt="image" src="./img/icons-1/arrow-right.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="modal modal_appointment">
+    <div class="modal__container">
+        <div class="modal__content">
+            <div class="appointment">
+                <div class="appointment__body">
+                    <div class="appointment__top">
+                        <h2 class="appointment__title title">Запись на прием</h2>
+                        <div class="top-info top-info_modal">
+                            <div class="top-info__info">
+                                <div class="top-info__column">
+                                    <svg>
+                                        <use xlink:href="#calendar"></use>
+                                    </svg>
+                                    <p data-appointment-date></p>
+                                </div>
+                                <div class="top-info__column">
+                                    <svg>
+                                        <use xlink:href="#time"></use>
+                                    </svg>
+                                    <p data-appointment-time></p>
+                                </div>
+                            </div>
+                            <div data-appointment-value class="top-info__promo"></div>
+                        </div>
+                    </div>
+                    <div class="appointment__main">
+                        <div class="appointment__row">
+                            <h4 class="appointment__row-title">Врач</h4>
+                            <div class="appointment__row-content">
+                                <h4 class="appointment__row-name">
+                                    <span data-appointment-name></span>
+                                    <b data-appointment-desc></b>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="appointment__row">
+                            <h4 class="appointment__row-title">Услуга</h4>
+                            <div class="appointment__row-content">
+                                <h4 class="appointment__row-name">
+                                    <span data-appointment-title></span>
+                                    <div class="appointment__price">
+                                        <span data-appointment-price></span>
+                                        <b data-appointment-oldprice></b>
+                                    </div>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment__form service-container__section-container service-container__form-section">
+                        <h2 class="service-container__section-title title">Напишите нам и мы перезвоним!</h2>
+                        <form action="" class="service-container__form">
+                            <div class="service-container__form-inputs">
+                                <div class="custom-input">
+                                    <span>Ваше имя<b>*</b></span>
+                                    <input type="text" required>
+                                </div>
+                                <div class="custom-input">
+                                    <span>Ваш контактный телефон<b>*</b></span>
+                                    <input type="text" required>
+                                </div>
+                                <div class="custom-input">
+                                    <span>Сообщение</span>
+                                    <textarea required></textarea>
+                                </div>
+                            </div>
+                            <div class="service-container__form-bottom">
+                                <button type="submit" aria-label="" class="btn btn-green">ОТПРАВИТЬ</button>
+                                <p>Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и
+                                    соглашаетесь c <a href="#">политикой конфиденциальности</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div data-modal-close class="appointment__close">
+                    <svg>
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal_thanks">
+    <div class="modal__container">
+        <div class="modal__content">
+            <div class="modal-thanks">
+                <img loading="lazy" alt="image" src="./img/done.svg" class="modal-thanks__icon">
+                <h4 class="modal-thanks__title">Ваше письмо успешно отправлено!</h4>
+                <p class="modal-thanks__desc">
+                    В ближайшее время мы с вами свяжемся
+                </p>
+                <div data-modal-close class="modal-thanks__close">
+                    <svg><use xlink:href="#close"></use></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 20 20" id="a-l" xmlns="http://www.w3.org/2000/svg"><path d="m14 2-8 8 8 8" stroke-width="3" stroke-linecap="round"/></symbol><symbol viewBox="0 0 20 20" id="a-r" xmlns="http://www.w3.org/2000/svg"><path d="m6 2 8 8-8 8" stroke-width="3" stroke-linecap="round"/></symbol><symbol viewBox="0 0 14 21" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path d="M12.914.586a2 2 0 0 0-2.828 0L.172 10.5l9.914 9.914a2 2 0 1 0 2.828-2.828L5.828 10.5l7.086-7.086a2 2 0 0 0 0-2.828Z"/></symbol><symbol viewBox="0 0 14 21" id="arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M.586.586a2 2 0 0 1 2.828 0l9.914 9.914-9.914 9.914a2 2 0 1 1-2.828-2.828L7.672 10.5.586 3.414a2 2 0 0 1 0-2.828Z"/></symbol><symbol viewBox="0 0 20 20" id="calendar" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="18" height="16" rx="3" stroke-width="2"/><path d="M5 1v3M15 1v3" stroke-width="2" stroke-linecap="round"/><path d="M4 7h12M4 11h12M4 15h12M5 8v8M10 8v8M15 8v8" stroke-width="2"/></symbol><symbol viewBox="0 0 20 20" id="close" xmlns="http://www.w3.org/2000/svg"><path d="M2 18 18 2M18 18 2 2" stroke-width="2" stroke-linecap="round"/></symbol><symbol viewBox="0 0 20 20" id="location" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="9" r="2.25" stroke-width="1.5"/><path d="M10 1.75a7.25 7.25 0 0 1 5.014 12.487l-4.842 4.57a.25.25 0 0 1-.344 0l-4.842-4.57A7.25 7.25 0 0 1 10 1.75Z" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="mail" xmlns="http://www.w3.org/2000/svg"><rect x="1.75" y="3.75" width="16.5" height="12.5" rx="1.25" stroke-width="1.5"/><path d="m2 8 7.106 3.553a2 2 0 0 0 1.788 0L18 8" stroke-width="1.5"/></symbol><symbol viewBox="0 0 20 20" id="phone" xmlns="http://www.w3.org/2000/svg"><path d="M2.29 2.888c0 3.106 1.535 7.191 4.643 10.299 3.107 3.107 7.074 4.525 10.18 4.524.945 0 1.65-.78 1.783-1.715v-2.55a.572.572 0 0 0-.488-.643c-1.295-.253-2.505-.713-4.167-1.475a.568.568 0 0 0-.722.218l-.857 1.407a15.586 15.586 0 0 1-3.135-2.434 16.091 16.091 0 0 1-2.479-3.18l1.407-.857a.568.568 0 0 0 .218-.722c-.762-1.662-1.221-2.872-1.475-4.167a.572.572 0 0 0-.643-.488h-2.55c-.935.133-1.714.839-1.715 1.783Z" stroke-width="1.5"/></symbol><symbol viewBox="0 0 24 24" id="star" xmlns="http://www.w3.org/2000/svg"><path d="M11.538 1.68a.5.5 0 0 1 .924 0l2.844 6.838 7.384.592a.5.5 0 0 1 .285.878l-5.625 4.82 1.718 7.204a.5.5 0 0 1-.747.543L12 18.695l-6.321 3.86a.5.5 0 0 1-.747-.543l1.718-7.205-5.625-4.819a.5.5 0 0 1 .285-.878l7.384-.592 2.844-6.839Z"/></symbol><symbol viewBox="0 0 20 20" id="time" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke-width="2"/><path d="M10 4v6h4" stroke-width="2" stroke-linecap="round"/></symbol></svg>
+<div data-cookies-js class="cookies">
+    <p class="cookies__text">
+        Мы используем cookie. Это позволяет нам анализировать взаимодействие посетителей с сайтом и делать его лучше. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="#">политикой защиты и обработки персональных данных.</a>
+    </p>
+    <button type="button" aria-label="Принять" class="cookies__btn btn btn-green">ПРИНЯТЬ</button>
+    <div class="cookies__close">
+        <svg><use xlink:href="#close"></use></svg>
+    </div>
+</div>
+<script src="common.js?v=1758749834421"></script>
+</body>
+
+</html>

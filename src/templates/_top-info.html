@@ -2,14 +2,14 @@
     <div class="top-info__info">
         <div class="top-info__column">
             <svg><use xlink:href="#calendar"></use></svg>
-            @@cardDate
+            <p data-appointment-date>@@cardDate</p>
         </div>
         <div class="top-info__column">
             <svg><use xlink:href="#time"></use></svg>
-            @@cardTime
+            <p data-appointment-time>@@cardTime</p>
         </div>
     </div>
-    <div class="top-info__promo">
+    <div data-appointment-value class="top-info__promo">
         @@cardValue
     </div>
 </div>

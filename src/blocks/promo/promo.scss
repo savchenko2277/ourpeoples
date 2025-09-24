@@ -3,6 +3,9 @@
 .promo {
 	$self: &;
 
+    max-width: 1920px;
+    width: 100%;
+
     @include media("<=xs") {
         border-bottom: 1px solid #EAE9F3;
     }

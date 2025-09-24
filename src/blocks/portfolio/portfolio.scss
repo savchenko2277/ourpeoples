@@ -1,0 +1,68 @@
+@use 'lib' as *;
+
+.portfolio {
+	$self: &;
+
+    padding: 36px 0px 80px 0px;
+
+	&__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        @include media("<=lg") {
+            gap: 16px;
+        }
+
+        @include media("<=md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include media("<=xs") {
+            grid-template-columns: 100%;
+        }
+	}
+
+	&__item {
+        padding: 36px 40px 64px 40px;
+        box-shadow: 0px 4px 20px 0px #595A7024;
+        border-radius: 32px;
+        
+        display: flex;
+        flex-direction: column;
+
+        @include media("<=lg") {
+            padding: 20px 20px 36px 20px;
+        }
+	}
+
+	&__item-title {
+        margin-bottom: 28px;
+        margin-top: auto;
+        font-weight: 700;
+        font-size: fluid(20px, 16px);
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+
+        @include media("<=lg") {
+            margin-bottom: 16px;
+        }
+	}
+
+	&__item-compare {
+        margin-bottom: 28px;
+
+        @include media("<=lg") {
+            margin-bottom: 16px;
+        }
+	}
+
+	&__item-name {
+        b {
+            color: var(--green);
+            font-weight: 400;
+        }
+	}
+
+}

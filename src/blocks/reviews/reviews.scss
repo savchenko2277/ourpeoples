@@ -1,0 +1,118 @@
+@use 'lib' as *;
+
+.reviews {
+    $self: &;
+
+    padding-bottom: 80px;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__item {
+        box-shadow: 0px 4px 16px 0px #595A7014;
+        padding: 40px;
+        border-radius: 32px;
+
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        align-items: start;
+        gap: 40px;
+
+        @include media("<=lg") {
+            grid-template-columns: repeat(2, auto);
+        }
+
+        @include media("<=xs") {
+            gap: 16px;
+            padding: 20px;
+        }
+    }
+
+    &__item-title {
+        min-width: 198px;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        b {
+            font-weight: 400;
+            color: var(--green);
+        }
+
+        @include media("<=lg") {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            padding-left: 80px;
+        }
+
+        @include media("<=xs") {
+            padding-left: 0;
+        }
+    }
+
+    &__item-content {
+        @include media("<=lg") {
+            grid-column: span 2;
+        }
+    }
+
+    &__item-name {
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: fluid(24px, 20px);
+        padding-left: 80px;
+
+        @include media("<=xs") {
+            padding-left: 0;
+        }
+    }
+
+    &__item-text {
+        font-size: 16px;
+        line-height: 150%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 32px;
+
+        &::before {
+            content: '';
+            display: block;
+            flex: 0 0 auto;
+            width: 48px;
+            height: 48px;
+            background: url('./img/services/icon-quote.svg') no-repeat center / cover;
+
+            @include media("<=xs") {
+                display: none;
+            }
+        }
+    }
+
+    &__item-rating {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        justify-content: right;
+        margin-top: 48px;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @include media("<=lg") {
+            grid-row: 1 / span 1;
+            grid-column: 2 / span 1;
+            margin-top: 0;
+        }
+    }
+
+}

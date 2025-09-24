@@ -6,19 +6,19 @@
         "cardValue": "- 15%"
         })
     </div>
-    <h5 class="offers-card__title">@@cardTitle</h5>
+    <h5 class="offers-card__title" data-appointment-title>@@cardTitle</h5>
     <div class="offers-card__info">
         <img loading="lazy" alt="image" src="./img/offers-card/@@cardImg.webp" class="offers-card__img">
         <div class="offers-card__info-text">
-            <p class="offers-card__name">@@cardName</p>
-            <p class="offers-card__desc">@@cardDesc</p>
+            <p class="offers-card__name" data-appointment-name>@@cardName</p>
+            <p class="offers-card__desc" data-appointment-desc>@@cardDesc</p>
         </div>
     </div>
     <div class="offers-card__bottom">
         <div class="offers-card__price">
-            <b>4 800 ₽</b>
-            @@cardPrice
+            <b data-appointment-oldprice>4 800 ₽</b>
+            <p data-appointment-price>@@cardPrice</p>
         </div>
-        <button type="button" aria-label="ЗАПИСАТЬСЯ НА ПРИЕМ" class="offers-card__btn btn btn-green">ЗАПИСАТЬСЯ НА ПРИЕМ</button>
+        <button type="button" aria-label="ЗАПИСАТЬСЯ НА ПРИЕМ" class="offers-card__btn btn btn-green" data-modal=".modal_appointment">ЗАПИСАТЬСЯ НА ПРИЕМ</button>
     </div>
 </div>

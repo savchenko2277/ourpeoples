@@ -1,0 +1,51 @@
+@@include("_head.html", {"id":"home"})
+@@include("_header.html")
+
+@@include("_section-top.html", {
+"sectionClass":"p-top",
+"sectionTitle":"Команда",
+"pageName":"Команда"
+})
+
+<section class="team team-second">
+    <div class="team__container container">
+        @@include("_team-card.html", {
+        "cardClass": "team-second__card",
+        "cardImg": "1",
+        "cardTitle": "Евгения Владимировна Антонинкова",
+        "cardDesc": "Врач стоматолог ортопед, стоматолог терапевт"
+        })
+        @@include("_team-card.html", {
+        "cardClass": "team-second__card",
+        "cardImg": "2",
+        "cardTitle": "Полина Владимировна Маркова",
+        "cardDesc": "Врач стоматолог общей практики"
+        })
+        @@include("_team-card.html", {
+        "cardClass": "team-second__card",
+        "cardImg": "3",
+        "cardTitle": "Эдуард Погосович Хансанамян",
+        "cardDesc": "Врач хирург стоматолог"
+        })
+        @@include("_team-card.html", {
+        "cardClass": "team-second__card",
+        "cardImg": "4",
+        "cardTitle": "Вероника Геннадьевна Лукьян",
+        "cardDesc": "Гигиенист стоматологический"
+        })
+        @@include("_team-card.html", {
+        "cardClass": "team-second__card",
+        "cardImg": "5",
+        "cardTitle": "Елена Васильевна Черновицкая",
+        "cardDesc": "Врач хирург имплантолог"
+        })
+        @@include("_team-card.html", {
+        "cardClass": "team-second__card",
+        "cardImg": "6",
+        "cardTitle": "Анна Сергеевна Добрыдина",
+        "cardDesc": "Старшая медсестра"
+        })
+    </div>
+</section>
+
+@@include("_bottom.html")

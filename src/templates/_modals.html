@@ -1,0 +1,99 @@
+<div class="modal modal_appointment">
+    <div class="modal__container">
+        <div class="modal__content">
+            <div class="appointment">
+                <div class="appointment__body">
+                    <div class="appointment__top">
+                        <h2 class="appointment__title title">Запись на прием</h2>
+                        <div class="top-info top-info_modal">
+                            <div class="top-info__info">
+                                <div class="top-info__column">
+                                    <svg>
+                                        <use xlink:href="#calendar"></use>
+                                    </svg>
+                                    <p data-appointment-date></p>
+                                </div>
+                                <div class="top-info__column">
+                                    <svg>
+                                        <use xlink:href="#time"></use>
+                                    </svg>
+                                    <p data-appointment-time></p>
+                                </div>
+                            </div>
+                            <div data-appointment-value class="top-info__promo"></div>
+                        </div>
+                    </div>
+                    <div class="appointment__main">
+                        <div class="appointment__row">
+                            <h4 class="appointment__row-title">Врач</h4>
+                            <div class="appointment__row-content">
+                                <h4 class="appointment__row-name">
+                                    <span data-appointment-name></span>
+                                    <b data-appointment-desc></b>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="appointment__row">
+                            <h4 class="appointment__row-title">Услуга</h4>
+                            <div class="appointment__row-content">
+                                <h4 class="appointment__row-name">
+                                    <span data-appointment-title></span>
+                                    <div class="appointment__price">
+                                        <span data-appointment-price></span>
+                                        <b data-appointment-oldprice></b>
+                                    </div>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment__form service-container__section-container service-container__form-section">
+                        <h2 class="service-container__section-title title">Напишите нам и мы перезвоним!</h2>
+                        <form action="" class="service-container__form">
+                            <div class="service-container__form-inputs">
+                                <div class="custom-input">
+                                    <span>Ваше имя<b>*</b></span>
+                                    <input type="text" required>
+                                </div>
+                                <div class="custom-input">
+                                    <span>Ваш контактный телефон<b>*</b></span>
+                                    <input type="text" required>
+                                </div>
+                                <div class="custom-input">
+                                    <span>Сообщение</span>
+                                    <textarea required></textarea>
+                                </div>
+                            </div>
+                            <div class="service-container__form-bottom">
+                                <button type="submit" aria-label="" class="btn btn-green">ОТПРАВИТЬ</button>
+                                <p>Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и
+                                    соглашаетесь c <a href="#">политикой конфиденциальности</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div data-modal-close class="appointment__close">
+                    <svg>
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal_thanks">
+    <div class="modal__container">
+        <div class="modal__content">
+            <div class="modal-thanks">
+                <img loading="lazy" alt="image" src="./img/done.svg" class="modal-thanks__icon">
+                <h4 class="modal-thanks__title">Ваше письмо успешно отправлено!</h4>
+                <p class="modal-thanks__desc">
+                    В ближайшее время мы с вами свяжемся
+                </p>
+                <div data-modal-close class="modal-thanks__close">
+                    <svg><use xlink:href="#close"></use></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

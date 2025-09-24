@@ -2,5 +2,62 @@
 
 .cookies {
 	$self: &;
+    max-width: 990px;
+    width: calc(100% - 20px);
+    background: rgba($color: #595A70, $alpha: 0.95);
+    position: fixed;
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    padding: 16px 40px 24px 24px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    transition: all var(--trans);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    @include media("<=xs") {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+	&__text {
+        line-height: 150%;
+        width: 100%;
+        color: #fff;
+        a {
+            color: #B6B5C8;
+        }
+	}
+
+	&__btn {
+        padding: 6px 24px;
+        flex: 0 0 auto;
+        height: fit-content;
+        line-height: 170%;
+	}
+
+	&__close {
+        position: absolute;
+        top: 8px; right: 8px;
+        cursor: pointer;
+
+        svg {
+            width: 16px; height: 16px;
+            stroke: var(--green);
+        }
+	}
 
 }

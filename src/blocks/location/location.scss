@@ -3,6 +3,8 @@
 .location {
     $self: &;
 
+    max-width: 1920px;
+
     &__container {
         display: grid;
         grid-template-columns: 63% 37%;

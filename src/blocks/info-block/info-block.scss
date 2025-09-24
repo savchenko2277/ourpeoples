@@ -8,8 +8,169 @@
     background-size: cover;
     color: var(--white);
 
+    &__side-pagination {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        position: absolute;
+        bottom: 37px; left: 248px;
+        z-index: 10;
+
+        span {
+            width: 8px; height: 8px;
+            border-radius: 100%;
+            background: #D5D4E2;
+            transition: all var(--trans);
+            cursor: pointer;
+
+            &.swiper-pagination-bullet-active {
+                background: var(--green);
+            }
+        }
+
+        @include media("<=sm") {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__card.swiper-slide {
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 177px 1fr;
+        gap: 30px;
+        color: #25263B;
+        padding-bottom: 70px;
+
+        @include media("<=sm") {
+            grid-template-columns: 100%;
+            gap: 20px;
+            padding: 20px;
+            padding-bottom: 80px;
+        }
+    }
+
+    &__card-text {
+        font-family: "RobotoSerif";
+        font-style: italic;
+        line-height: 150%;
+        &::before {
+            content: '';
+            display: block;
+            width: 48px; height: 48px;
+            background: url("./img/services/icon-quote.svg") no-repeat center / cover;
+            margin-bottom: 27px;
+
+            @include media("<=sm") {
+                display: none;
+            }
+        }
+    }
+
+    &__card-left {
+        @include media("<=sm") {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+        }
+    }
+
+    &__card-desc {
+        line-height: 150%;
+    }
+
+    &__card-name {
+        font-weight: 700;
+        color: var(--green);
+        margin-bottom: 4px;
+    }
+
+    &__card-image {
+        width: 82px; height: 82px;
+        padding: 6px;
+        flex: 0 0 auto;
+        border-radius: 100%;
+        overflow: hidden;
+        box-shadow: 0px 4px 20px 0px #595A7040;
+        margin-bottom: 24px;
+        
+        img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+
+        @include media("<=sm") {
+            margin-bottom: 0;
+        }
+    }
+
     @include media("<=lg") {
         padding: 0px;
+    }
+
+    &_slider {
+        
+        @include media("<=lg") {
+            padding: 48px 0px 56px 0px;
+        }
+        
+        #{$self}__content.container {
+            grid-column: span 3;
+
+            @include media("<=lg") {
+                padding: 0;
+            }
+        }
+
+        #{$self}__container.container {
+            gap: 0;
+
+            @include media("<=lg") {
+                width: min(var(--container), 100% - var(--gap) * 2);
+                margin: 0 auto;
+            }
+        }
+
+        #{$self}__items {
+            gap: 48px;
+            display: flex;
+            flex-direction: row;
+
+            @include media("<=lg") {
+                display: none;
+            }
+        }
+
+        #{$self}__item {
+            max-width: 176px;
+        }
+
+
+        #{$self}__item-title {
+            font-size: 16px;
+            max-width: 176px;
+        }
+
+        #{$self}__item-text {
+            max-width: 176px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        #{$self}__side {
+            grid-column: span 3;
+            background: #FFFFFF;
+            border-radius: 32px;
+            padding: 0;
+            height: fit-content;
+            position: relative;
+
+            @include media("<=lg") {
+                grid-column: span 1;
+            }
+        }
     }
 
     &__container.container {
@@ -44,6 +205,27 @@
 
         @include media("<=lg") {
             text-align: center;
+        }
+    }
+
+    &__side-navigation.custom-navigation {
+        position: absolute;
+        top: 40px; right: 40px;
+        gap: 20px;
+        z-index: 10;
+
+        .custom-navigation__btn {
+            box-shadow: 0px 4px 20px 0px #595A7024;
+            width: 48px; height: 48px;
+        }
+
+        @include media("<=sm") {
+            top: auto;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            justify-content: space-between;
+            padding: 20px;
         }
     }
 
@@ -158,7 +340,7 @@
                 grid-column: span 2;
             }
         }
-        
+
     }
 
     &__form-btn {

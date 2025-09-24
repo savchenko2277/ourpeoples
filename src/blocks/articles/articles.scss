@@ -8,6 +8,12 @@
     border-top: 1px solid #EAE9F3;
     border-bottom: 1px solid #EAE9F3;
 
+    &_protesis {
+        @include media(">xlg") {
+            display: none;
+        }
+    }
+
 	&__container {
         display: flex;
         flex-direction: column;

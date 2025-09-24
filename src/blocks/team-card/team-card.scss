@@ -22,6 +22,11 @@
         position: relative;
         transition: color var(--trans);
 
+        span {
+            display: block;
+            max-width: 130px;
+        }
+
         &::after {
             content: '';
             position: absolute;
