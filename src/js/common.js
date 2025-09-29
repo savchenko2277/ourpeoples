@@ -2,6 +2,7 @@ import { throttle } from "./libs/utils";
 // import { driveAdaptive } from "./libs/driveAdaptive.js";
 import "./polyfills.js";
 import "./blocks.js";
+import Inputmask from "inputmask";
 
 /* Тут можно писать код общий для всего проекта и требующий единого пространства имен */
 
@@ -84,5 +85,13 @@ document.addEventListener('DOMContentLoaded', function () {
             move(e.touches[0].clientX);
         });
     })
+
+});
+
+document.querySelectorAll(`[type="tel"]`).forEach(input => {
+    const im = new Inputmask("+7 (999) 999-99-99", {
+        showMaskOnHover: false 
+    });
+    im.mask(input);
 
 });

@@ -26,6 +26,10 @@
             justify-content: end;
             pointer-events: none;
 
+            @include media("<=xxxlg") {
+                bottom: 60px;
+            }
+
             @include media("<=sm") {
                 display: none;
             }
@@ -53,10 +57,27 @@
                 background-color: var(--red);
             }
 
+            @include media("<=xxxlg") {
+                bottom: 79px;
+            }
+
             @include media("<=sm") {
                 display: none;
             }
         }
 	}
+
+    .custom-navigation__btn {
+        @include media("<=xxxlg") {
+            width: 48px; height: 48px;
+
+        }
+    }
+
+    .custom-navigation {
+        @include media("<=xxxlg") {
+            gap: 16px;
+        }
+    }
 
 }

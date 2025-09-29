@@ -46,6 +46,7 @@
         background-color: #F3F8FF;
         font-size: fluid(14px, 12px);
         flex: 1 1 auto;
+        line-height: 150%;
 
         @include media("<=xxxlg") {
             padding: 16px 16px 24px 16px;

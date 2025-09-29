@@ -83,6 +83,10 @@
                 font-size: 20px;
                 font-weight: 700;
             }
+
+            @include media("<=xs") {
+                font-size: 14px;
+            }
         }
     }
 
@@ -147,6 +151,10 @@
         margin-bottom: 32px;
         font-size: 20px;
         font-weight: 700;
+
+        @include media("<=lg") {
+            font-size: 16px;
+        }
     }
 
     &__column-text {
@@ -160,6 +168,11 @@
         b {
             color: var(--green);
             font-weight: 400;
+        }
+
+        @include media("<=lg") {
+            font-size: 12px;
+            gap: 16px;
         }
     }
 
@@ -183,6 +196,10 @@
             height: 20px;
             fill: transparent;
             stroke: var(--neutral);
+        }
+
+        @include media("<=lg") {
+            font-size: 18px;
         }
     }
 
@@ -230,6 +247,10 @@
             align-items: center;
             gap: 8px;
         }
+
+        @include media("<=lg") {
+            font-size: 12px;
+        }
     }
 
     &__column-list &__column-title {
@@ -261,6 +282,11 @@
 
             &:hover {
                 color: var(--green-hover);
+            }
+
+            @include media("<=lg") {
+                font-size: 13px;
+                line-height: 18px;
             }
         }
     }

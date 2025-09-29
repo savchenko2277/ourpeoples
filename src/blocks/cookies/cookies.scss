@@ -45,8 +45,11 @@
 	&__btn {
         padding: 6px 24px;
         flex: 0 0 auto;
-        height: fit-content;
+        height: 36px;
         line-height: 170%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 	}
 
 	&__close {
@@ -57,6 +60,13 @@
         svg {
             width: 16px; height: 16px;
             stroke: var(--green);
+            transition: all var(--trans);
+        }
+
+        &:hover {
+            svg {
+                stroke: var(--green-hover);
+            }
         }
 	}
 

@@ -5,25 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1758749834421">
+    <link rel="stylesheet" href="style.css?v=1759155692753">
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
-        // Функция ymaps.ready() будет вызвана, когда
-        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
         ymaps.ready(init);
         function init() {
-            // Создание карты.
             var myMap = new ymaps.Map("map", {
-                // Координаты центра карты.
-                // Порядок по умолчанию: «широта, долгота».
-                // Чтобы не определять координаты центра карты вручную,
-                // воспользуйтесь инструментом Определение координат.
-                center: [55.76, 37.64],
-                // Уровень масштабирования. Допустимые значения:
-                // от 0 (весь мир) до 19.
-                zoom: 7
+                center: [55.209673, 61.280571],
+                zoom: 15
             });
+            var myPlacemark = new ymaps.Placemark(
+                [55.209673, 61.280571],
+                {
+                    balloonContent: '<strong>Свои Люди</strong>',
+                    hintContent: 'Свои Люди'
+                },
+                {
+                    preset: 'islands#redIcon',
+                    draggable: false
+                }
+            );
+
+            // Добавляем метку на карту
+            myMap.geoObjects.add(myPlacemark);
         }
     </script>
 
@@ -54,10 +59,10 @@
                     <li><b>ВС</b> выходной</li>
                 </ul>
                 <div class="header__link-icons header__top_in-mobile">
-                    <a href="#" class="header__link-icon">
+                    <a href="#" class="header__link-icon icon-link">
                         <img loading="lazy" alt="image" src="./img/icons-1/telega.svg">
                     </a>
-                    <a href="#" class="header__link-icon">
+                    <a href="#" class="header__link-icon icon-link">
                         <img loading="lazy" alt="image" src="./img/icons-1/whatsapp.svg">
                     </a>
                 </div>
@@ -276,7 +281,7 @@
             </a>
             <form action="" class="footer__form">
                 <label class="footer__label">
-                    <input type="text" placeholder="Ваш телефон">
+                    <input type="tel" placeholder="Ваш телефон">
                 </label>
                 <button type="button" aria-label="Отправить" class="footer__form-btn btn">Перезвонить мне</button>
             </form>
@@ -433,7 +438,7 @@
                                 </div>
                                 <div class="custom-input">
                                     <span>Ваш контактный телефон<b>*</b></span>
-                                    <input type="text" required>
+                                    <input type="tel" required>
                                 </div>
                                 <div class="custom-input">
                                     <span>Сообщение</span>
@@ -484,7 +489,7 @@
         <svg><use xlink:href="#close"></use></svg>
     </div>
 </div>
-<script src="common.js?v=1758749834421"></script>
+<script src="common.js?v=1759155692753"></script>
 </body>
 
 </html>

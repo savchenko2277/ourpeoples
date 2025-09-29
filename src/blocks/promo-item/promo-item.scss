@@ -252,8 +252,8 @@
         }
 
         &:hover {
-            background-color: var(--btn-color, #fff);
-            color: #000;
+            border-color: var(--btn-color-hover, #fff);
+            color: var(--btn-color-hover);
         }
     }
 
@@ -325,5 +325,7 @@
             max-width: 100%;
         }
     }
+
+
 
 }
