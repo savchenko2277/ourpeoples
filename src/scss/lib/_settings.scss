@@ -8,10 +8,11 @@
     transition: all var(--trans);
     cursor: pointer;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     background: none;
     border: none;
     padding: 0;
-    letter-spacing: 0.05px;
+    letter-spacing: 0.03em;
 }
 
 .btn-green {

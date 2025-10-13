@@ -48,6 +48,7 @@
             flex-wrap: wrap;
             gap: 4px 16px;
             padding-left: 80px;
+            min-width: 0;
         }
 
         @include media("<=xs") {

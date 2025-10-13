@@ -33,6 +33,7 @@
         &_form {
             background-color: #D8EAFF;
             padding: 36px 100px;
+            padding-bottom: 48px;
 
             .contacts__card-title {
                 margin-bottom: 40px;
@@ -66,7 +67,7 @@
         flex-wrap: wrap;
 
         li {
-            text-transform: uppercase;
+            @include uppercase();
         }
 
         li:has(b) {
@@ -75,7 +76,7 @@
             b {
                 color: var(--red);
                 font-weight: 400;
-                text-transform: uppercase;
+                @include uppercase();
             }
         }
     }

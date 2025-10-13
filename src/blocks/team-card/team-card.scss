@@ -8,6 +8,10 @@
     display: flex !important;
     flex-direction: column;
 
+    &.swiper-slide {
+        height: auto !important;
+    }
+
 	&__img {
         aspect-ratio: 1 / 1;
         width: 100%;
@@ -15,7 +19,7 @@
 	}
 
 	&__title {
-        padding: 24px 48px 24px 32px;
+        padding: 28px 48px 24px 32px;
         background-color: #D8EAFF;
         font-size: fluid(18px, 14px);
         font-weight: 700;
@@ -37,7 +41,7 @@
         }
 
         @include media("<=xxxlg") {
-            padding: 24px 32px 24px 16px;
+            padding: 32px 32px 24px 16px;
         }
 	}
 

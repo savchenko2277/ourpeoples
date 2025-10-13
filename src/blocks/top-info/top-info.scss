@@ -94,6 +94,13 @@
         background: url(./img/promo-d-bg.svg) no-repeat center / cover;
         color: var(--white);
         flex: 0 0 auto;
+
+        @include media("<=lg") {
+            font-size: 16px;
+            height: 32px;
+            width: 72px;
+            padding: 6px 12px;
+        }
     }
 
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1759155692753">
+    <link rel="stylesheet" href="style.css?v=1760376349997">
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
@@ -22,7 +22,10 @@
                     hintContent: 'Свои Люди'
                 },
                 {
-                    preset: 'islands#redIcon',
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/location.svg',
+                    iconImageSize: [64, 64],
+                    
                     draggable: false
                 }
             );
@@ -46,6 +49,9 @@
                         <use xlink:href="#phone"></use>
                     </svg>
                     +7 (351) 225‒40‒36
+                </a>
+                <a href="#" class="header__btn-mobile btn btn-green header__top_in-mobile">
+                    <span>Заказать звонок</span>
                 </a>
                 <a href="#" class="header__top-link header__address header__top_in-mobile">
                     <svg>
@@ -156,7 +162,7 @@
 <div class="service-container p-top">
     <div class="container">
         <div class="service-container__side container">
-            <div class="service-item accordeon active">
+            <div class="service-item accordeon">
                 <div class="service-item__top accordeon__btn">
                     <img loading="lazy" src="./img/icons-service/1.webp" alt="" class="service-item__icon">
                     <a href="#" class="service-item__title service-item__arrow">Лечение зубов и десен</a>
@@ -255,7 +261,7 @@
                     </div>
                 </div>
             </div>
-            <div class="service-item">
+            <div class="service-item is-current">
                 <div class="service-item__top ">
                     <img loading="lazy" src="./img/icons-service/2.webp" alt="" class="service-item__icon">
                     <a href="#" class="service-item__title">Имплантация</a>
@@ -849,7 +855,7 @@
         <svg><use xlink:href="#close"></use></svg>
     </div>
 </div>
-<script src="common.js?v=1759155692753"></script>
+<script src="common.js?v=1760376349997"></script>
 </body>
 
 </html>

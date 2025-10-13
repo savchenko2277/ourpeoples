@@ -56,16 +56,16 @@
         justify-content: center;
         border-radius: 22px;
         border: 2px solid var(--green);
-        text-transform: uppercase;
+        @include uppercase();
         padding: 6px 24px;
         width: fit-content;
         transition: all var(--trans);
+        line-height: 24px;
         font-weight: 700;
 
         &:hover {
             border-color: var(--green-hover);
-            background: var(--green-hover);
-            color: #fff;
+            color: var(--green-hover);
         }
     }
 
@@ -79,6 +79,7 @@
     &__article-item-title {
         color: #25263B;
         line-height: 150%;
+        transition: all var(--trans);
     }
 
     &__article-item-date {
@@ -92,6 +93,12 @@
         grid-template-columns: 93px 1fr;
         gap: 16px;
         border-bottom: 1px solid #D8E3F1;
+
+        &:hover {
+            .service-container__article-item-title {
+                color: var(--green-hover);
+            }
+        }
     }
 
     &__article-date {
@@ -126,7 +133,7 @@
         width: 100%;
 
         @include media(">xlg") {
-            margin-top: -176px;
+            margin-top: -180px;
         }
 
         @include media("<=xlg") {
@@ -391,7 +398,7 @@
         display: flex;
         flex-direction: column;
         gap: 36px;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
 
     &__side.container {
@@ -401,7 +408,7 @@
         border-radius: 20px;
         overflow: hidden;
         position: sticky;
-        top: var(--header-height);
+        top: calc(var(--header-height) - 22px);
         left: 0;
         height: fit-content;
 
@@ -539,7 +546,7 @@
         font-size: 14px;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         justify-content: space-between;
         position: relative;
         gap: 24px;
@@ -602,6 +609,10 @@
         font-size: fluid(28px, 20px);
         margin-bottom: 28px;
         padding-left: 32px;
+
+        @include media("<=lg") {
+            padding-left: 0;
+        }
     }
 
     &__form-section {

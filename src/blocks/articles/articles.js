@@ -4,9 +4,9 @@ import { Swiper } from "swiper";
 (() => {
 
     const articlesSwiper = new Swiper('.articles__swiper', {
-        slidesPerView: 1.07, 
+        slidesPerView: 1.15, 
         spaceBetween: 24,
-        centeredSlides: true,
+        centeredSlides: false,
         breakpoints: {
             768: {
                 slidesPerView: 2.33,

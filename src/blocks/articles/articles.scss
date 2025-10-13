@@ -39,7 +39,7 @@
 
     &__btn {
         font-size: 14px;
-        text-transform: uppercase;
+        @include uppercase();
         color: var(--green);
         font-weight: 700;
         position: relative;

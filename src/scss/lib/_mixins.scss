@@ -43,9 +43,14 @@
 	left: -9999px;
 }
 
-@mixin outline($color: grey) { 
-	outline: 1px dotted $color; 
-} 
+@mixin outline($color: grey) {
+	outline: 1px dotted $color;
+}
+
+@mixin uppercase($spacing: 0.05em) {
+	text-transform: uppercase;
+	letter-spacing: $spacing;
+}
 
 // показать текущий диапазон
 @mixin screen-media($color: #777) {
@@ -61,77 +66,87 @@
 		xxs: 480,
 		xxxs: 360
 	);
-	& {
-		position: relative;		
-		&::before {
-			content: "";
-			display: block;
-			text-align: center;
-			position: fixed;
-			top: 30px; right: 5px;
-			z-index: 9999;
-			min-height: 16px;
-			min-width: 40px;
-			padding: 0 10px;
-			font: 12px/16px Arial, sans-serif;
-			color: $color;
-			background-color: #ffffd3;
-			border: 1px solid #bbb;
-		}
-		@each $var, $size in $breakpoints {
-			@media screen and (max-width: #{$size}px) {
-				&::before {
-					content: "#{$var}:#{$size}";
-				}
+
+& {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		text-align: center;
+		position: fixed;
+		top: 30px;
+		right: 5px;
+		z-index: 9999;
+		min-height: 16px;
+		min-width: 40px;
+		padding: 0 10px;
+		font: 12px/16px Arial, sans-serif;
+		color: $color;
+		background-color: #ffffd3;
+		border: 1px solid #bbb;
+	}
+
+	@each $var, $size in $breakpoints {
+		@media screen and (max-width: #{$size}px) {
+			&::before {
+				content: "#{$var}:#{$size}";
 			}
 		}
 	}
 }
+}
 
 // подключить шрифт 
-@mixin font-face($file, $family, $weight: "normal", $style: "normal", $folder: "fonts/") { 
-	@font-face { 
+@mixin font-face($file, $family, $weight: "normal", $style: "normal", $folder: "fonts/") {
+	@font-face {
 		font-family: $family;
 		src: url("#{$folder}#{$file}.woff") format('woff'),
-			url("#{$folder}#{$file}.woff2") format('woff2'),
-			url("#{$folder}#{$file}.ttf")  format('truetype');
+		url("#{$folder}#{$file}.woff2") format('woff2'),
+		url("#{$folder}#{$file}.ttf") format('truetype');
 		font-weight: $weight;
 		font-style: $style;
-	} 
+	}
 }
-  	
+
 // вставить символ псевдографики 
-@mixin inssymbol( $font, $symbol: '\0000', $pseudo: "after") { 
-	&:#{$pseudo} { 
-		content: "#{$symbol}"; 
-		font-family: $font; 
-		vertical-align: middle; 
-		@content; 
-	} 
-} 
-  	
+@mixin inssymbol($font, $symbol: '\0000', $pseudo: "after") {
+	&:#{$pseudo} {
+		content: "#{$symbol}";
+		font-family: $font;
+		vertical-align: middle;
+		@content;
+	}
+}
+
 // заполнить родительский блок 
-@mixin fill($spacing: 0, $index: 0) { 
-	position: absolute; 
-	display: block; 
-	box-sizing: border-box; 
-	top: $spacing; bottom: $spacing; 
-	left: $spacing; right: $spacing; 
-	z-index: $index; 
-} 
-  	
+@mixin fill($spacing: 0, $index: 0) {
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	top: $spacing;
+	bottom: $spacing;
+	left: $spacing;
+	right: $spacing;
+	z-index: $index;
+}
+
 // сохранять пропрорции 
-@mixin aspect-ratio($w: 1, $h: 1) { 
-	display: block; 
-	position: relative; 
-	$ratio: calc($h / $w); 
-	&:before { 
-		content: ''; 
-		display: block; 
-		padding-top: (100% * $ratio); 
-	} 
-	> * { @include fill(); } 
-} 
+@mixin aspect-ratio($w: 1, $h: 1) {
+	display: block;
+	position: relative;
+	$ratio: calc($h / $w);
+
+	&:before {
+		content: '';
+		display: block;
+		padding-top: (100% * $ratio);
+	}
+
+	>* {
+		@include fill();
+	}
+}
 
 // плавное изменение размера на заданном диапазоне ширины экрана (через медиазапросы)
 @mixin range($currentValue, $targetValue, $currentScreen, $targetScreen, $property: 'font-size') {

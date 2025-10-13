@@ -3,7 +3,25 @@
 .service-item {
     $self: &;
 
+    &.is-current {
+        background-color: #F0F0F7;
+        color: var(--green);
+    }
+
+    &.accordeon.active {
+        background-color: #F0F0F7;
+    }
+
+    transition: all var(--trans);
     background-color: #F6F7FB;
+    
+    &:hover {
+        .service-item__top {
+            > a {
+                color: var(--green-hover);
+            }
+        }
+    }
 
     &__top {
         display: flex;
@@ -13,6 +31,10 @@
         padding: 12px 20px;
         font-size: 15px;
         font-weight: 700;
+
+        a {
+            transition: all var(--trans);
+        }
     }
 
     &__icon {

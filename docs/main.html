@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1759155692753">
+    <link rel="stylesheet" href="style.css?v=1760376349997">
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
@@ -22,7 +22,10 @@
                     hintContent: 'Свои Люди'
                 },
                 {
-                    preset: 'islands#redIcon',
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/location.svg',
+                    iconImageSize: [64, 64],
+                    
                     draggable: false
                 }
             );
@@ -46,6 +49,9 @@
                         <use xlink:href="#phone"></use>
                     </svg>
                     +7 (351) 225‒40‒36
+                </a>
+                <a href="#" class="header__btn-mobile btn btn-green header__top_in-mobile">
+                    <span>Заказать звонок</span>
                 </a>
                 <a href="#" class="header__top-link header__address header__top_in-mobile">
                     <svg>
@@ -186,7 +192,7 @@
                         <img loading="lazy" alt="image" src="./img/draw-light-blue-1.svg" class="promo-item__decor-right">
                     </div>
                 </div>
-                <div class="swiper-slide promo-item" style="background-color: #514F6E; color: #ffffff; --card-color: #514F6E; --decor-color: #9493A9; --btn-color: #00A9B4; --btn-color-hover: #00BEB8;">
+                <div class="swiper-slide promo-item" style="background-color: #454365; color: #ffffff; --card-color: #454365; --decor-color: #514F6E; --btn-color: #00A9B4; --btn-color-hover: #00BEB8;">
                     <div class="promo-item__container">
                         <div class="promo-item__decor">
                             <div class="promo-item__decor-draw">
@@ -963,7 +969,7 @@
         <svg><use xlink:href="#close"></use></svg>
     </div>
 </div>
-<script src="common.js?v=1759155692753"></script>
+<script src="common.js?v=1760376349997"></script>
 </body>
 
 </html>

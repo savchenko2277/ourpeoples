@@ -72,6 +72,7 @@
             width: auto;
             position: relative;
             overflow: visible;
+            padding-bottom: 22px;
 
             &::before {
                 content: '';
@@ -245,6 +246,11 @@
         font-size: 13px;
         font-weight: 400;
         color: #C6E9FF;
+        transition: all var(--trans);
+
+        &:hover {
+            color: #9DCFEF;
+        }
 
         &:not(:last-child, &:last-child) {
             &::after {

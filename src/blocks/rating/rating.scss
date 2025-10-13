@@ -48,6 +48,11 @@
             transform: translate(-50%, -50%);
             mix-blend-mode: darken;
         }
+
+        @include media("<=xs") {
+            height: 48px;
+            
+        }
 	}
 
 	&__value {

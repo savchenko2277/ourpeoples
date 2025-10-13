@@ -11,7 +11,7 @@
 
 	&__link {
         color: var(--green);
-        text-transform: uppercase;
+        @include uppercase();
         font-weight: 700;
         position: relative;
         transition: color var(--trans);
