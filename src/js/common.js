@@ -90,8 +90,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.querySelectorAll(`[type="tel"]`).forEach(input => {
     const im = new Inputmask("+7 (999) 999-99-99", {
-        showMaskOnHover: false 
+        showMaskOnHover: false
     });
     im.mask(input);
+});
 
+const validateInput = (selector) => {
+    const input = selector;
+    let value = true;
+
+    if (input.dataset.type = "tel") {
+        const text = input.value.replace(/[\s_\-\(\)+]/g, '');
+
+        const minmax = input.dataset.minmax ? input.dataset.minmax.split(',').map(Number) : null;
+
+        if (minmax) {
+            const length = text.length;
+            if (length < minmax[0] || length > minmax[1]) {
+                value = false;
+                input.parentElement.classList.add('is-invalid');
+            }
+        }
+
+        return value;
+    } else {
+        const minmax = input.dataset.minmax ? input.dataset.minmax.split(',').map(Number) : null;
+
+        if (minmax) {
+            const length = input.value.trim().length;
+            if (length < minmax[0] || length > minmax[1]) {
+                value = false;
+                input.parentElement.classList.add('is-invalid');
+            }
+        }
+
+        return value;
+    }
+};
+
+const validateForm = (selector) => {
+    const form = selector;
+    let value = true;
+
+    form.querySelectorAll('input[data-minmax], textarea[data-minmax]').forEach(input => {
+        input.parentElement.classList.remove('is-invalid');
+        if (!validateInput(input)) value = false;
+    });
+
+    return value;
+};
+
+const forms = document.querySelectorAll('form');
+
+forms.forEach(form => {
+    form.querySelectorAll('input[data-minmax], textarea[data-minmax]').forEach(input => {
+        input.addEventListener('focus', () => {
+            console.log('ddd')
+            form.querySelectorAll('input[data-minmax], textarea[data-minmax]').forEach(el => {
+                el.parentElement.classList.remove('is-invalid');
+            });
+        });
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!validateForm(form)) return;
+    });
 });

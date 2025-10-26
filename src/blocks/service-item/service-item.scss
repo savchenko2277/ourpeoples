@@ -16,10 +16,13 @@
     background-color: #F6F7FB;
     
     &:hover {
-        .service-item__top {
-            > a {
-                color: var(--green-hover);
-            }
+        
+    }
+
+    &__arrow {
+        transition: all var(--trans);
+        &:hover {
+            color: var(--green);
         }
     }
 
@@ -31,6 +34,12 @@
         padding: 12px 20px;
         font-size: 15px;
         font-weight: 700;
+
+        &:hover {
+            a {
+                color: var(--green);
+            }
+        }
 
         a {
             transition: all var(--trans);
@@ -72,6 +81,11 @@
         a {
             padding: 4px 0px;
             font-size: 15px;
+            transition: all var(--trans);
+
+            &:hover {
+                color: var(--green);
+            }
         }
     }
 

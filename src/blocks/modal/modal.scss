@@ -18,6 +18,12 @@
     align-items: center;
     justify-content: center;
 
+    &_callback {
+        #{$self}__content {
+            padding: 0px 16px;
+        }
+    }
+
     &.active {
         opacity: 1;
         visibility: visible;

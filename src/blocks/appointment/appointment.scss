@@ -10,11 +10,92 @@
     overflow: visible;
     position: relative;
 
-    @include media("<=md") {
-        max-width: 100%;
-        width: 100%;
-        border-radius: 0;
-        min-height: 100%;
+    &_callback {
+
+        #{$self}__top {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 32px;
+
+            @include media("<=md") {
+                padding: 52px 32px 16px 32px;
+            }
+        }
+
+        #{$self}__inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+
+            .custom-input {
+                input {
+                    background: #F0F0F7;
+                }
+            }
+
+            @include media("<=sm") {
+                grid-template-columns: 100%;
+            }
+        }
+
+        #{$self}__bottom {
+            padding: 24px 56px 48px 56px;
+
+            @include media("<=md") {
+                padding: 16px 32px 28px 32px;
+            }
+        }
+
+        #{$self}__close {
+            @include media("<=md") {
+                position: absolute;
+                right: 20px;
+                left: auto;
+                top: 20px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+                border-radius: 0;
+
+                svg {
+                    width: 100%; height: 100%;
+                    stroke: var(--green);
+                }
+            }
+        }
+    }
+
+    &:not(.appointment_callback) {
+        @include media("<=md") {
+            max-width: 100%;
+            width: 100%;
+            border-radius: 0;
+            min-height: 100%;
+
+            .appointment__body {
+                padding: 56px 16px 16px 16px;
+            }
+
+            .appointment__top {
+                flex-direction: column;
+                gap: 20px;
+                align-items: start;
+                padding: 0;
+                margin-bottom: 20px;
+                border-bottom: 0;
+            }
+
+            .appointment__close {
+                position: fixed;
+                right: 16px;
+                top: 16px;
+                width: 48px;
+                height: 48px;
+                left: auto;
+            }
+        }
     }
 
     &__body {
@@ -22,10 +103,6 @@
         flex-direction: column;
         max-height: 100vh;
         overflow-y: auto;
-
-        @include media("<=md") {
-            padding: 56px 16px 16px 16px;
-        }
     }
 
     &__top {
@@ -37,18 +114,15 @@
         padding: 48px 56px 24px 56px;
         border-bottom: 1px solid #EAE9F3;
 
-        @include media("<=md") {
-            flex-direction: column;
-            gap: 20px;
-            align-items: start;
-            padding: 0;
-            margin-bottom: 20px;
-            border-bottom: 0;
-        }
+        @include media("<=md") {}
     }
 
     &__title {
         font-size: fluid(28px, 20px);
+
+        b {
+            color: var(--green);
+        }
     }
 
     &__main {
@@ -168,13 +242,6 @@
             width: 20px;
             height: 20px;
             stroke: #fff;
-        }
-
-        @include media("<=md") {
-            position: fixed;
-            right: 16px; top: 16px;
-            width: 48px; height: 48px;
-            left: auto;
         }
 
         &:hover {

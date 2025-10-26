@@ -52,7 +52,6 @@
     color: #000;
     font-size: 16px;
     position: relative;
-    overflow: hidden;
     
     &:has(input) {
         height: 56px;
@@ -99,10 +98,51 @@
         transition: all var(--trans);
         font-size: 18px;
         font-weight: 700;
+        border: 1px solid #fff;
+        border-radius: 8px;
     }
 
     &:hover {
         background: #FBFCFE;
+    }
+
+    &.is-invalid {
+        input {
+            border-color: #E31E24;
+        }
+    }
+
+    &.is-invalid::before, &.is-invalid::after {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &::before {
+        content: 'Пожалуйста, заполните поле';
+        position: absolute;
+        left: 0;
+        bottom: calc(100% + 6px);
+        padding: 10px 14px;
+        border-radius: 6px;
+        background: #FF5A5A;
+        z-index: 1;
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--trans);
+    }
+
+    &::after {
+       content: '';
+       background: url("./img/treug.svg") no-repeat center / cover;
+       position: absolute;
+       width: 12px; height: 6px;
+       bottom: 100%; left: 94px;
+       opacity: 0;
+       visibility: hidden;
+       transition: all var(--trans);
     }
 }
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css?v=1760376349997">
+    <link rel="stylesheet" href="style.css?v=1761504926102">
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
@@ -490,6 +490,43 @@
         </div>
     </div>
 </footer>
+<div class="modal modal_callback">
+    <div class="modal__container">
+        <div class="modal__content">
+            <div class="appointment appointment_callback">
+                <form class="appointment__body">
+                    <div class="appointment__top">
+                        <h2 class="appointment__title title">
+                            Оставьте заявку и мы вам перезвоним <br>
+                            <b>в течение 5 минут</b>
+                        </h2>
+                        <div class="appointment__inputs">
+                            <div class="custom-input">
+                                <span>Ваше имя<b>*</b></span>
+                                <input type="text" required>
+                            </div>
+                            <div class="custom-input">
+                                <span>Ваш контактный телефон<b>*</b></span>
+                                <input type="tel" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment__bottom service-container__form-bottom">
+                        <button type="submit" aria-label="" class="btn btn-green">ОТПРАВИТЬ</button>
+                        <p>Нажимая на кнопку «Отправить», вы даете согласие на обработку персональных данных и
+                            соглашаетесь c <a href="#">политикой конфиденциальности</a></p>
+                    </div>
+                </form>
+                <div data-modal-close class="appointment__close">
+                    <svg>
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal modal_appointment">
     <div class="modal__container">
         <div class="modal__content">
@@ -583,7 +620,9 @@
                     В ближайшее время мы с вами свяжемся
                 </p>
                 <div data-modal-close class="modal-thanks__close">
-                    <svg><use xlink:href="#close"></use></svg>
+                    <svg>
+                        <use xlink:href="#close"></use>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -599,7 +638,7 @@
         <svg><use xlink:href="#close"></use></svg>
     </div>
 </div>
-<script src="common.js?v=1760376349997"></script>
+<script src="common.js?v=1761504926102"></script>
 </body>
 
 </html>

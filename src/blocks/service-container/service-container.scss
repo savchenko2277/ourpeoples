@@ -8,6 +8,14 @@
     position: relative;
     padding-bottom: 80px;
 
+    &_doctor {
+        #{$self}__section {
+            > h2 {
+                margin-bottom: fluid(28px, 20px);
+            }
+        }
+    }
+
     &_protesis {
         @include media("<=xlg") {
             padding-bottom: 36px;
@@ -478,7 +486,7 @@
 
     &__column-side {
         position: sticky;
-        top: var(--header-height);
+        top: calc(var(--header-height) - 22px);
         left: 0;
         height: fit-content;
         display: flex;

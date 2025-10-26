@@ -47,6 +47,12 @@
 
         @include media("<=lg") {
             margin-bottom: 16px;
+            font-size: 16px;
+            min-height: 72px;
+        }
+
+        @include media("<=xs") {
+            min-height: 48px;
         }
 	}
 
@@ -62,6 +68,10 @@
         b {
             color: var(--green);
             font-weight: 400;
+        }
+        @include media("<=lg") {
+            display: flex;
+            flex-direction: column;
         }
 	}
 

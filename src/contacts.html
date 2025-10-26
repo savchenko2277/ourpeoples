@@ -50,18 +50,18 @@
         </div>
         <div class="contacts__card contacts__card_form">
             <h3 class="contacts__card-title title">Напишите нам и мы перезвоним</h3>
-            <form action="" class="contacts__form">
+            <form novalidate action="" class="contacts__form">
                 <div class="custom-input">
                     <span>Ваше имя<b>*</b></span>
-                    <input type="text" required>
+                    <input data-minmax="2, 15" type="text" required>
                 </div>
                 <div class="custom-input">
                     <span>Ваш контактный телефон<b>*</b></span>
-                    <input type="text" required>
+                    <input data-minmax="11, 11" type="tel" required>
                 </div>
                 <div class="custom-input">
                     <span>Сообщение</span>
-                    <textarea required></textarea>
+                    <textarea></textarea>
                 </div>
                 <div class="contacts__form-bottom">
                     <button type="submit" aria-label="ОТПРАВИТЬ" class="contacts__form-btn btn btn-green">ОТПРАВИТЬ</button>

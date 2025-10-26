@@ -62,6 +62,7 @@
     })
 
     const setHeaderHeight = () => {
+        if(header.classList.contains('is-scroll')) return;
         const headerHeight = header.querySelector('.header__container').getBoundingClientRect().height;
         document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
     }
