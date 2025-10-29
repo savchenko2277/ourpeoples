@@ -67,6 +67,7 @@
         transition: all var(--trans);
         color: #595A70;
         pointer-events: none;
+        text-wrap: nowrap;
 
         b {
             color: var(--red);
